@@ -1,0 +1,763 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <!-- Title -->
+        <title>GreatStars</title>
+        <!-- Meta -->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- Favicon -->
+        <link href="favicon.ico" rel="shortcut icon">
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+        <!-- Google Fonts-->
+        <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
+    </head>
+
+    <style>
+        body {
+            position: relative;
+        }
+
+        body:before {
+            content: url(./assets/img/flag1.gif);
+            display: block;
+            position: fixed;
+            top: 52px;
+            left: 0;
+            z-index: 999999;
+        }
+
+        body::after {
+            content: url(./assets/img/in.png);
+            display: block;
+            position: fixed;
+            top: 187px;
+            left: -20px;
+            z-index: 999999;  
+        }
+
+        .wrp-counter {
+            padding: 20px 0;
+        }
+
+        .counter {
+            font-size: 21px;
+            text-align: center;
+            max-width: 150px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #03C8A8;
+            color: #FFf;
+        }
+        .subscriber {
+            margin-top: 10px;
+        }
+        
+        @media screen and (max-width: 1199px) {
+          body:before {
+            content: url(./assets/img/flag.png) !important;
+            display: block !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            z-index: 999999 !important;   
+        }
+        
+        .position-text-header {
+            text-align: center;
+            background: #000;
+            color: #fff;
+            padding: 10px;
+            z-index: -1;
+            font-size: 17px;
+        }
+    }
+        
+    </style>
+    
+    <body>
+        
+        <div class="width=100% height=100% align-left"></div><div class="width=100% height=100% align-left"></div><div class="align-left"></div><div  style="display:none;"><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#108;&#105;&#110;&#105;&#121;&#97;&#111;&#107;&#111;&#110;&#46;&#114;&#117;">&#1086;&#1082;&#1085;&#1072;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#112;&#114;&#101;&#109;&#105;&#117;&#109;&#107;&#97;&#100;&#114;&#46;&#114;&#117;">&#1092;&#1086;&#1090;&#1086;&#1075;&#1088;&#1072;&#1092;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#117;&#110;&#105;&#115;&#104;&#97;&#98;&#108;&#111;&#110;.&#99;&#111;&#109;">html php</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#114;&#105;&#116;&#117;&#97;&#108;&#103;&#97;&#114;&#97;&#110;&#116;&#46;&#114;&#117;">&#1087;&#1072;&#1084;&#1103;&#1090;&#1085;&#1080;&#1082;&#1080;</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#116;&#117;&#116;&#108;&#111;&#118;&#101;&#46;&#114;&#117;">&#1079;&#1085;&#1072;&#1082;&#1086;&#1084;&#1089;&#1090;&#1074;&#1072;</a></div><div class="padding valign-image-left"></div><div class="padding  valign-image-right"></div><div class="padding valign-image-center"></div><div id="body-bg">
+            <ul class="social-icons pull-right hidden-xs">
+                <li class="social-rss">
+                    <a href="#" target="_blank" title="RSS"></a>
+                </li>
+                <li class="social-twitter">
+                    <a href="#" target="_blank" title="Twitter"></a>
+                </li>
+                <li class="social-facebook">
+                    <a href="#" target="_blank" title="Facebook"></a>
+                </li>
+                <li class="social-googleplus">
+                    <a href="#" target="_blank" title="GooglePlus"></a>
+                </li>
+            </ul>
+            <div class="position-text-header">
+                Все вселенская.
+                <hr>
+                Историческая, Всегалактическая государственно- частная контора.
+                <hr>
+                Ищем партнеров по бизнесу, и гос бизнесу.
+            </div>
+            <div id="pre-header" class="container" style="height:340px">
+            </div>
+            <div id="header" style="line-height: 60px!important;">
+                <div class="container">
+                    <div class="row">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="index.html" title="">
+                                <!-- <img src="assets/img/logo.png" alt="Logo" /> -->
+                                <span style="font-size: 45px; color: #fff;">GreatStars</span>
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+                    </div>
+                </div>
+            </div>
+            <!-- Top Menu -->
+            <div id="hornav" class="container no-padding">
+                <div class="row">
+                    <div class="col-md-12 no-padding">
+                        <div class="text-center visible-lg">
+                            
+                            <ul id="hornavmenu" class="nav navbar-nav">
+                                <li>
+                                    <a href="index.html" class="fa-home">Главная</a>
+                                </li>
+                                <li>
+                                    <span class="fa-gears">Мировавые новости</span>
+                                    <ul>
+                                        <li>
+                                            <a href="https://azh.kz/ru/newsl">Новости Казахстана</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://tengrinews.kz/world_news/">Новости мира</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-copy">Статьи</span>
+                                    <ul>
+                                        <li>
+                                            <a href="pages-about-us.html">Он</a>
+                                        </li>
+                                        <li>
+                                            <a href="pages-services.html">Услуги</a>
+                                        </li>
+                                        <li>
+                                            <a href="pages-faq.html">Часто задаваемые вопросы</a>
+                                        </li>
+                                        <li>
+                                            <a href="pages-about-me.html">Обо мне </a>
+                                        </li>
+                                        <li>
+                                            <a href="pages-full-width.html">Полная ширина</a>
+                                        </li>
+                                        <li>
+                                            <a href="pages-left-sidebar.html">Лева боковая панель</a>
+                                        </li>
+                                        <li>
+                                            <a href="pages-right-sidebar.html">Права боковая панель</a>
+                                        </li>
+                                        <li>
+                                            <a href="pages-login.html">Авторезироваться</a>
+                                        </li>
+                                        <li>
+                                            <a href="pages-sign-up.html">Зарегистрироваться</a>
+                                        </li>
+                                        <li>
+                                            <a href="pages-404.html">Страница ошибки 404</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-th">Новости</span>
+                                    <ul>
+                                        <li>
+                                            <a href="portfolio-2-column.html">Новости других цивилизаций</a>
+                                        </li>
+                                        <li>
+                                            <a href="portfolio-3-column.html">Новость 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="portfolio-4-column.html">Новости от инопланентных расс</a>
+                                        </li>
+                                        <li>
+                                            <a href="portfolio-6-column.html">Новость 4</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-th">Услуга телевидение</span>
+                                    <ul>
+                                        <li>
+                                            <a href="http://telik.live/">Телевидение</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-font">Музыка</span>
+                                    <ul>
+                                        <li>
+                                            <a href="mysic.html">Разная музыка</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-font">Блог</span>
+                                    <ul>
+                                        <li>
+                                            <a href="blog-list.html">Блог</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-single.html">ОТзывы о нас</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li>
+                                    <a href="contact.html" class="fa-comment">Контакты</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Menu -->
+            <div id="post_header" class="container" style="height:340px">
+            </div>
+            <div id="content-top-border" class="container">
+            </div>
+            <!-- === END HEADER === -->
+            <!-- === BEGIN CONTENT === -->
+            <div id="content">
+                <div class="container no-padding">
+                    <div class="row">
+                        <!-- <video class="vidTest" width="100%" height="650px" src="assets/video/video_merger.mp4" controls></video> -->
+                        <iframe width="100%" height="650px" src="https://www.youtube.com/embed/KiFv8IzUmFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- Carousel Slideshow -->
+                        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                            <!-- Carousel Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example" data-slide-to="1"></li>
+                                <li data-target="#carousel-example" data-slide-to="2"></li>
+                            </ol>
+                            <div class="clearfix"></div>
+                            <!-- End Carousel Indicators -->
+                            <!-- Carousel Images -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="assets/img/slideshow/slide1.jpg">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/img/slideshow/slide2.jpg">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/img/slideshow/slide3.jpg">
+                                </div>
+                                <div class="item">
+                                    <img src="assets/img/slideshow/slide4.jpg">
+                                </div>
+                            </div>
+                            <!-- End Carousel Images -->
+                            <!-- Carousel Controls -->
+                            <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                            <!-- End Carousel Controls -->
+                        </div>
+                        <!-- End Carousel Slideshow -->
+                    </div>
+                </div>
+                <div class="container background-gray-lighter" style="padding: 15px;">
+                    <div class="row margin-vert-40">
+                      <a href="#">
+                        <img src="https://ltdfoto.ru/images/2023/08/02/flaggggg.jpg" alt="">
+                      </a>
+                    </div>
+                </div>
+                <div class="container background-white">
+                    <div class="row margin-vert-30">
+                        <!-- Main Text -->
+                        <div class="col-md-12">
+                            <h2 class="text-center">Информация</h2>
+                            <p class="text-center">Личная конфеденциальная информация КТО МЫ ТАКИЕ! Я, Соломыкин Геннадий Геннадьевич, создатель проекта , фирмы "Great Stars" и данного сайта, занимаюсь расшифровкой и передачей Галактической информации через сны, видения, общение со стихиями.</p>
+                            <p class="text-center">Общаюсь с потусторонними мирами,посещаю исторические порталы. Вся полученная информация мною обрабатывается и излагается посредством описаний, зарисовок. Впоследствии будет опубликована картинная галерея по сюжетным зарисовкам из снов, видений и поступающей информации. Одна из главных идей проекта - материализация положительных мыслей, идей для улучшения жизни на Земле и других Галактиках и не только для живых,но и для людей ушедших на тот свет, умерших. Многие идеи проекта уже получили подтверждение о своем реальном существовании, также через сны,видения. В целях правдивости и реалистичности происходящих со мной событий, в своих записях привожу автобиографические сведения,свидетельствующие о становлении и укреплении моего дара и моих способностях. В подобных записях я предоставляю некую расшифровку моего индивидуального дара (как он формировался и окреп).</p>
+                            <strong style="text-align:center; display: block;">
+                                Утвердили проект 100% 25%:участник 25% остаётся в стране в городе участника проекта. Накопители 25%+ к накопителю дополнительные резервы ,дополнение будет расписано 25% gs . Участники проекта с любой страны ! 1 июня
+                            </strong>
+                            <div>
+                                <img src="assets/img/gen.jpg">
+                                <div>Соломыкин Геннадий Геннадьевич</div>
+                            </div>
+                        </div>
+                        <!-- End Main Text -->
+                    </div>
+                </div>
+                <div class="container background-gray-lighter">
+                    <div class="row padding-vert-20">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-10">
+                            <!-- Portfolio -->
+                            <ul class="portfolio-group">
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInLeft">
+                                            <img alt="image1" src="assets/img/frontpage/image1.jpeg">
+                                            <figcaption>
+                                                <h3>Бесполый человек</h3>
+                                                <span>Я нахожусь в очень большом помещении.Огромная лестница.Человек бесполый в черном одеянии,что то вроде плаща. </span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInLeft">
+                                            <img alt="image1" src="assets/img/frontpage/image1.jpg">
+                                            <figcaption>
+                                                <h3>Сон на яву</h3>
+                                                <span>Вижу очень много людей в черных одеждах, вроде как мусульманские похороны ( но точно не могу быть уверена) человека высокопоставленного. Очень большая толпа людей, все в длинных черных одеждах, плащи до пола, смотрят вниз, вроде не имеют разрешение смотреть вверх.</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInRight">
+                                            <img alt="image2" src="assets/img/frontpage/image2.jpg">
+                                            <figcaption>
+                                                <h3>Знакомство</h3>
+                                                <span>В детстве искал с кем бы познакомиться.Однажды приметил в одном из ларьков мороженого девочку немного младше меня.Но как познакомиться?Надо выбрать момент.Вроде все к этому шло,мама ее ушла ,но видно не судьба. В детстве я рос спокойным ребенком .</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInLeft">
+                                            <img alt="image3" src="assets/img/frontpage/image3.jpg">
+                                            <figcaption>
+                                                <h3>Детство и школа</h3>
+                                                <span>Меня не пускали в школус 1 класса.Приходил чистенький без опозданий,но не успевал посидеть на уроках,как меня выгоняли за дверь.Учитея на футбольном поле.слонялся по школе и улице.Учильница забирала мой дневник,тетради и выгоняла.</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInRight">
+                                            <img alt="image4" src="assets/img/frontpage/image4.jpg">
+                                            <figcaption>
+                                                <h3>Сны и сновидения</h3>
+                                                <span>Я видела сон,который был настолько явным,что кажется реальностью.Ко мне приходили люди,как они называют себя из высшей цивилизации.Одеты они были в серебряные одежды.</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInLeft">
+                                            <img alt="image5" src="assets/img/frontpage/image5.jpg">
+                                            <figcaption>
+                                                <h3>Приятная встреча</h3>
+                                                <span>Встреча с инопланетным разумом номер два.Все те же люди высшей рассы в серебряных костюмах.Очень похожи друг на друга.Общее описание: высокие( выше 2 х метров) ,блондины,глаза голубые,худощавое телосложение,черты лиц правильные.Фигуры и лица идеальные без изъяна.</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInRight">
+                                            <img alt="image6" src="assets/img/frontpage/image6.jpg">
+                                            <figcaption>
+                                                <h3>Great Stars экспорт</h3>
+                                                <span>Предусмотренно проектом Great Stars экспорт от 2012 года. Экспорт товаров и отправка мысли в параллельные миры.</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInLeft">
+                                            <img alt="image1" src="assets/img/frontpage/image1.jpg">
+                                            <figcaption>
+                                                <h3>Сон о Земле</h3>
+                                                <span>Вижу себя и огромную нашу Планету.Настолько близко и явственно.Я стою напротив и слышу голос грудной женский.</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInRight">
+                                            <img alt="image2" src="assets/img/frontpage/image2.jpg">
+                                            <figcaption>
+                                                <h3>Сын</h3>
+                                                <span>Дом, коридор появился ,слева стеклянная перегородка, за перегородкой жена важная, отрывает Сына, смотрит мне в глаза через стекло .Взгляд такой от неё как бы пронзительный, иду далее по коридору.</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInLeft">
+                                            <img alt="image3" src="assets/img/frontpage/image3.jpg">
+                                            <figcaption>
+                                                <h3>Золотой человек</h3>
+                                                <span>Очень часто я попадаю в то или другое время,автобусы,техника,трамваи были и звёзды,также огромнейший космический корабль.Если ваши головы не видно.Это я сам реально видел,действительно техника город также.</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInRight">
+                                            <img alt="image4" src="assets/img/frontpage/image4.jpg">
+                                            <figcaption>
+                                                <h3>Сны и сновидения</h3>
+                                                <span>Я видела сон,который был настолько явным,что кажется реальностью.Ко мне приходили люди,как они называют себя из высшей цивилизации.Одеты они были в серебряные одежды.</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInLeft">
+                                            <img alt="image5" src="assets/img/frontpage/image5.jpg">
+                                            <figcaption>
+                                                <h3>Хранилище вечной славы</h3>
+                                                <span>Однажды я посетил через трамвайное депо хранилище , узнал когда уже достиг в подземелии и увидел своими глазами . Появился на территории похожей дпо . Иду вижу трамвай едет ,стал подходить ближе. вижу слева идут по направлению ко мне две женщины. Я иногда вспоминаю. причем в том сюжете электро инструмент в своей защите, которую словестно, мысленно написал. Имеется такое направление температуры, вопрос откуда знал что это понадобится .</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                                <!-- Portfolio Item -->
+                                <li class="portfolio-item col-sm col-xs padding-20">
+                                    <a href="#">
+                                        <figure class="animate fadeInRight">
+                                            <img alt="image6" src="assets/img/frontpage/image6.jpg">
+                                            <figcaption>
+                                                <h3>Экстасссенсы</h3>
+                                                <span>Здравствуйте всем тем кто сейчас читает эти записи. Теперь вы узнаете как я умею писать и насколько образован умственно, с кем общаюсь. О них и другом более интересном вы узнаете если вы изучаете психологию мозга и развитие возможностей мозга и узнаете о вмешательстве разных направленностей из параллельного времени и увиденные жилища..</span>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </li>
+                                <!-- //Portfolio Item// -->
+                            </ul>
+                            <!-- End Portfolio -->
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </div>
+                <div class="container background-white">
+                    <div class="row padding-vert-40">
+                        <div class="col-md-12">
+                            <h2 class="animate fadeIn text-center">Понравилось ?</h2>
+                            <p class="animate fadeIn text-center">Можете пройти глубже и узнать подробнее о вселенной на нашем другом сайте.</p>
+                            <p class="animate fadeInUp text-center">
+                                <a href="https://genady-solomykin.github.io/greatstars-usa/articles.html">
+                                    <button class="btn btn-primary btn-lg" type="button">Узнать детальнее</button>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === END CONTENT === -->
+            <!-- Подписчики -->
+            <div class="follower">
+                <div class="container" style="padding: 0;">
+                    <div class="follower-wrapper" style="background-color: #fff; color: #000; padding-bottom: 45px;">
+                        <div style="text-align: center; border-bottom: 1px solid #ececec; padding-bottom: 5px;">
+                            <h2>Наши подписчики</h2>
+                            <p style="text-align: center; color: #000;">С нами уже более 20.000 человек, будь тоже с нами!</p>
+                            <div style="text-align: left; padding: 10px 15px; color: #000;">
+                                Здравствуйте уважаемые подписчики и все жители мира  крупнейшей разработки финансово- информационного сайта, имеющего название  ТСОПГ,GreatStars. Основа наших идей: благополучие с развитием и в других не менее важных структурах, другие миры, связь и заинтересованность .
+                                Я, Соломыкин Геннадий Геннадьевич, основатель со своей судьбой .
+                                Сейчас мы разрабатываем проект мирового уровня финансов . 
+                                Для подписчиков, коммерческое приложение. Разместить вашу страничку либо аккаунт офицально оформленный на ваши ФИО.,город проживания. Это для рекламы и общения с жителями других городов и территорий проживания .
+                                Также придусмотрен и финансовый  если желают. Это ваш бизнес и товарооборот и средство связи в дальнейшем. Будем улучшать ,а это видео общения .
+                                Более подробную информацию на электронную почту или Вацап <a href="tel:87088476536">87088476537</a> .Будем очень рады общению и долголетию проживания С.Г.Г GS.
+                            </div>
+                        </div>
+                        <!-- <ul style="list-style-type: none; max-height: 40vh; overflow-y: auto;" class="follower-wrapper__list"></ul>    -->
+                        <div class="wrp-counter">
+                            <div class="counter">
+                                <span>61.382</span>
+                                <div class="subscriber">Подписчик</div>
+                            </div>
+                        </div>
+                        <style>
+                           .pulse {
+                                position: relative; 
+                                text-align: center; 
+                                padding: 20px; 
+                                border-radius: 50%;
+                                background: #3D64FF;
+                                width: 120px;
+                                height: 120px;
+                                margin-left: auto;
+                                margin-right: 25px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: #fff;
+                            }
+
+                            .pulse::before {
+                                content: '';
+                                position: absolute;
+                                border: 2px solid #3D64FF;
+                                left: -20px;
+                                opacity: 0;
+                                right: -20px;
+                                top: -20px;
+                                bottom: -20px;
+                                border-radius: 50%;
+                                animation: pulse 2.5s linear infinite;
+                                }
+
+                                @keyframes pulse {
+                                    0% {
+                                        transform: scale(0.5);
+                                        opacity: 0;
+                                    }
+                                    50% {
+                                        opacity: 1;
+                                    }
+                                    100% {
+                                        transform: scale(1.2);
+                                        opacity: 0;
+                                    }
+                                }
+
+                                .pulse::after,
+                                .pulse::before {
+                                content: '';
+                                position: absolute;
+                                border: 2px solid #3D64FF;
+                                left: -20px;
+                                opacity: 0;
+                                right: -20px;
+                                top: -20px;
+                                bottom: -20px;
+                                border-radius: 50%;
+                                animation: pulse 2.5s linear infinite;
+                                }
+
+                                .pulse::after {
+                                animation-delay: 1.25s;
+                                }
+
+                                @keyframes pulse {
+                                0% {
+                                    transform: scale(0.5);
+                                    opacity: 0;
+                                }
+                                50% {
+                                    opacity: 1;
+                                }
+                                100% {
+                                    transform: scale(1.2);
+                                    opacity: 0;
+                                }
+                                }
+                        </style>
+                        <div class="pulse">
+                            <span style="font-size: 21px;">1.148.047</span>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+            <!-- Подписчики конец -->
+            <!-- === BEGIN FOOTER === -->
+            <div id="content-bottom-border" class="container">
+            </div>
+            <div id="base">
+                <div class="container padding-vert-30 margin-top-60">
+                    <div class="row">
+                        <!-- Contact Details -->
+                        <div class="col-md-4 margin-bottom-20">
+                            <h3 class="margin-bottom-10">Контактная информация</h3>
+                            <p>
+                                <span class="fa-phone">Телефон:</span>+77088476537
+                                <br>
+                                <span class="fa-envelope">Email:</span>
+                                <a href="mailto:info@joomla51.com">web_x90@mail.ru</a>
+                                <br>
+                                <span class="fa-link">Веб Сайт 1:</span> 
+                                <a href="https://genady-solomykin.github.io/greatstars-usa/">Greatstars-usa</a> <br>
+                                <span class="fa-link">Веб Сайт 2:</span>
+                                <a href="https://genady-solomykin.github.io/greatstars-portals/">Greatstars-portals</a> <br>
+                                <span class="fa-link">Веб Сайт 3:</span>
+                                <a href="https://genady-solomykin.github.io/greatstars/">Greatstars</a> <br>
+                                <span class="fa-link">Мой FaceBook:</span>
+                                <a href="https://www.facebook.com/100981131517596/posts/179503440332031/">Интересная информация</a> <br>
+                                <span class="fa-link">Мой FaceBook:</span>
+                                <a href="https://m.facebook.com/story.php?story_fbid=379557480279715&id=100046763989450">Интересная информация</a> <br>
+                                <span class="fa-link">Мой FaceBook:</span>
+                                <a href="https://www.facebook.com/groups/514745622413411/permalink/816115142276456/">Интересная информация</a> <br>
+                                <span class="fa-link">Мой FaceBook:</span>
+                                <a href="https://m.facebook.com/story.php?story_fbid=380539516848178&id=100046763989450">Интересная информация</a> <br>
+                                <span class="fa-link">Мой Twitter:</span>
+                                <a href="https://twitter.com/TopographicMaps?s=08">Интересная информация</a> <br>
+                                <span class="fa-link">Мой FaceBook:</span>
+                                <a href="https://www.facebook.com/100046763989450/posts/382660849969378/">Интересная информация</a> <br>
+                                <span class="fa-link">Мой FaceBook:</span>
+                                <a href="https://www.facebook.com/namila0910/?ti=as">Интересная информация</a> <br>
+                                <span class="fa-link">Мой Twitter:</span>
+                                <a href="https://twitter.com/AlAmcRVJPb0P4DP/status/1445579750462799877?t=Mt9kD2ZwXxdGq-2OvWVf5w&s=19">Интересная информация</a> <br>
+                                <span class="fa-link">Мой Twitter:</span>
+                                <a href="https://twitter.com/AlAmcRVJPb0P4DP/status/1447581636443480068?t=BirPBv8ObFkEeGocz0Vrfw&s=08">Интересная информация</a> <br>
+                                <span class="fa-link">Мой Twitter:</span>
+                                <a href="https://twitter.com/AlAmcRVJPb0P4DP/status/1474658266693222402?t=M2EvbZTkq1NtWZM8iQOP_w&s=08">Интересная информация</a> <br>
+                                <span class="fa-link">Мой Twitter:</span>
+                                <a href="https://twitter.com/AlAmcRVJPb0P4DP/status/1488067288603545601?s=19">Интересная информация</a> <br>
+                                <span class="fa-link">Мой Twitter:</span>
+                                <a style="color: greenyellow;" href="https://twitter.com/AlAmcRVJPb0P4DP/status/1488808763477868546?t=ovPCedveIBiSQWuAM0hZgg&s=08">Интересная информация</a> <br>
+                                <span class="fa-link">Мой Twitter:</span>
+                                <a style="color: greenyellow;" href="https://twitter.com/AlAmcRVJPb0P4DP/status/1490215478190616577?t=LIt-b8riegenAn0RGK-m7g&s=19">Интересная информация</a> <br>
+                            </p>
+                            <p>Сайт написан,
+                                <br>React,
+                                <br>Redux,
+                                <br>Bootstrap</p>
+                                <br>
+                            <a href="https://www.youtube.com/channel/UCtDo-DCREhoIs_lorjJ7NMQ">Прямая трансляция</a>
+                        </div>
+                        
+                        <!-- End Contact Details -->
+                        <!-- Sample Menu -->
+                        <div class="col-md-3 margin-bottom-20">
+                            <h3 class="margin-bottom-10">Образец меню</h3>
+                            <ul class="menu">
+                                <li>
+                                    <a class="fa-tasks" href="#">Место для рекламы</a>
+                                </li>
+                                <li>
+                                    <a class="fa-users" href="#">О чем думаю сейчас</a>
+                                </li>
+                                <li>
+                                    <a class="fa-signal" href="#">Цифровой</a>
+                                </li>
+                                <li>
+                                    <a class="fa-coffee" href="#">В свободное время</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- End Sample Menu -->
+                        <div class="col-md-1"></div>
+                        <!-- Disclaimer -->
+                        <div class="col-md-3 margin-bottom-20 padding-vert-30 text-center">
+                            <h3 class="color-gray margin-bottom-10">Подпишитесь на нашу рассылку новостей</h3>
+                            <p>
+                                Подпишитесь на нашу рассылку, чтобы получать все <br>
+                                последние новости и информацию
+                            </p>
+                            <input type="email">
+                            <br>
+                            <button class="btn btn-primary btn-lg margin-top-20" type="button">Подписаться</button>
+                        </div>
+                        <!-- End Disclaimer -->
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Menu -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div id="footermenu" class="col-md-8">
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <a href="#" target="_blank">Sample Link</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">Sample Link</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">Sample Link</a>
+                                </li>
+                                <li>
+                                    <a href="#" target="_blank">Sample Link</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="copyright" class="col-md-4">
+                            <p class="pull-right">(c) <script type='text/javascript'>var mdate = new Date();document.write(mdate.getFullYear());</script> Your Copyright Info</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer Menu -->
+            <!-- JS -->
+            <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
+            <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+            <script type="text/javascript" src="assets/js/scripts.js"></script>
+            <!-- Isotope - Portfolio Sorting -->
+            <script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
+            <!-- Mobile Menu - Slicknav -->
+            <script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></script>
+            <!-- Animate on Scroll-->
+            <script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>
+            <!-- Sticky Div -->
+            <script type="text/javascript" src="assets/js/jquery.sticky.js" charset="utf-8"></script>
+            <!-- Slimbox2-->
+            <script type="text/javascript" src="assets/js/slimbox2.js" charset="utf-8"></script>
+            <!-- Modernizr -->
+            <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
+            <!-- End JS -->
+           
+  <div style="position:absolute;left:-3072px;top:0"><div class="width=100% height=100% align-left"></div><div class="align-left" width="1"></div><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#108;&#105;&#110;&#105;&#121;&#97;&#111;&#107;&#111;&#110;&#46;&#114;&#117;">&#1086;&#1082;&#1085;&#1072;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#112;&#114;&#101;&#109;&#105;&#117;&#109;&#107;&#97;&#100;&#114;&#46;&#114;&#117;">&#1092;&#1086;&#1090;&#1086;&#1075;&#1088;&#1072;&#1092;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#117;&#110;&#105;&#115;&#104;&#97;&#98;&#108;&#111;&#110;.&#99;&#111;&#109;">html php</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#114;&#105;&#116;&#117;&#97;&#108;&#103;&#97;&#114;&#97;&#110;&#116;&#46;&#114;&#117;">&#1087;&#1072;&#1084;&#1103;&#1090;&#1085;&#1080;&#1082;&#1080;</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#116;&#117;&#116;&#108;&#111;&#118;&#101;&#46;&#114;&#117;">&#1079;&#1085;&#1072;&#1082;&#1086;&#1084;&#1089;&#1090;&#1074;&#1072;</a></div>  </body>
+</html>
+<!-- === END FOOTER === -->
+
+
