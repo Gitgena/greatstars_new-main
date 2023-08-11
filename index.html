@@ -915,8 +915,8 @@
         counterSpan.textContent = formatNumber(currentValue);
 
         // Сохраняем значение в LocalStorage
-        localStorage.setItem('counterValue', currentValue.toString());
-        localStorage.setItem('lastUpdated', new Date().getTime().toString());
+        localStorage.setItem('counterValue3', currentValue.toString());
+        localStorage.setItem('lastUpdated3', new Date().getTime().toString());
     }
 
     setTimeout(updateCounter, 1200000); // Обновление каждые 20 минут
@@ -928,7 +928,7 @@ function formatNumber(number) {
 
 document.addEventListener('DOMContentLoaded', function () {
     const counterSpan = document.getElementById('counter');
-    const savedValue = localStorage.getItem('counterValue');
+    const savedValue = localStorage.getItem('counterValue3');
 
     if (savedValue) {
         const parsedValue = parseFloat(savedValue);
@@ -952,8 +952,8 @@ document.addEventListener('DOMContentLoaded', function () {
     counterSpan.textContent = formatNumber(currentValue);
 
     // Сохраняем значение в LocalStorage
-    localStorage.setItem('counterValue1', currentValue.toString());
-    localStorage.setItem('lastUpdated1', new Date().getTime().toString());
+    localStorage.setItem('counterValue2', currentValue.toString());
+    localStorage.setItem('lastUpdated2', new Date().getTime().toString());
 
     setTimeout(updateCounter1, 20 * 60 * 1000); // Обновление каждые 20 минут
 }
@@ -968,7 +968,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const counterSpan = document.querySelector('.counter span');
     let initialValue = 0; // Значение по умолчанию, если начальное значение некорректно
 
-    const savedValue = localStorage.getItem('counterValue1');
+    const savedValue = localStorage.getItem('counterValue2');
     if (savedValue) {
         initialValue = parseFloat(savedValue);
         if (isNaN(initialValue)) {
