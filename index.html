@@ -49,7 +49,7 @@
             position: fixed;
             top: 187px;
             left: -20px;
-            z-index: 999999;  
+            z-index: 999;  
         }
 
         .wrp-counter {
@@ -78,7 +78,7 @@
             position: absolute !important;
             top: 0 !important;
             left: 0 !important;
-            z-index: 999999 !important;   
+            z-index: 999 !important;   
         }
         
         .position-text-header {
@@ -90,10 +90,90 @@
             font-size: 17px;
         }
     }
+
+.loader {
+    z-index: 9999999999;
+    width: 207px;
+    height: 237px;
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: top;
+    font-size: 25px;
+    box-sizing: border-box;
+    border-top: 0.3em solid hotpink;
+    border-radius: 50%;
+    animation: rotating 2s ease-in-out infinite;
+    --direction: 1;
+}
+
+.loader::before,
+.loader::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    box-sizing: border-box;
+    top: -0.2em;
+}
+
+.loader::before {
+    border-top: 0.3em solid dodgerblue;
+    transform: rotate(120deg);
+}
+
+.loader::after {
+    border-top: 0.3em solid gold;
+    transform: rotate(240deg);
+}
+
+.loader span {
+    position: absolute;
+    color: white;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    line-height: 10em;
+    font-family: sans-serif;
+    animation: rotating 2s linear infinite;
+    --direction: -1;
+}
+
+@keyframes rotating {
+    50% {
+        transform: rotate(calc(180deg * var(--direction)));
+    }
+
+    100% {
+        transform: rotate(calc(360deg * var(--direction)));
+    }
+}
+
+.preloader {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    z-index: 99999;
+}
         
     </style>
     
     <body>
+
+        <div class="preloader">
+            <div class="loader">
+                <span>GreatStars</span>
+              </div>
+        </div>
         
         <div class="width=100% height=100% align-left"></div><div class="width=100% height=100% align-left"></div><div class="align-left"></div><div  style="display:none;"><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#108;&#105;&#110;&#105;&#121;&#97;&#111;&#107;&#111;&#110;&#46;&#114;&#117;">&#1086;&#1082;&#1085;&#1072;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#112;&#114;&#101;&#109;&#105;&#117;&#109;&#107;&#97;&#100;&#114;&#46;&#114;&#117;">&#1092;&#1086;&#1090;&#1086;&#1075;&#1088;&#1072;&#1092;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#117;&#110;&#105;&#115;&#104;&#97;&#98;&#108;&#111;&#110;.&#99;&#111;&#109;">html php</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#114;&#105;&#116;&#117;&#97;&#108;&#103;&#97;&#114;&#97;&#110;&#116;&#46;&#114;&#117;">&#1087;&#1072;&#1084;&#1103;&#1090;&#1085;&#1080;&#1082;&#1080;</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#116;&#117;&#116;&#108;&#111;&#118;&#101;&#46;&#114;&#117;">&#1079;&#1085;&#1072;&#1082;&#1086;&#1084;&#1089;&#1090;&#1074;&#1072;</a></div><div class="padding valign-image-left"></div><div class="padding  valign-image-right"></div><div class="padding valign-image-center"></div><div id="body-bg">
             <ul class="social-icons pull-right hidden-xs">
@@ -253,6 +333,14 @@
                                     </ul>
                                 </li>
                                 <li>
+                                    <span class="fa-th">Прайс-лист</span>
+                                    <ul>
+                                        <li>
+                                            <a href="https://docs.google.com/document/d/1WMwIZpc9F5n74dDl9duMVHhId5wMsX4SBgSysMTDJ54/edit?usp=sharing">Цены</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
                                     <span class="fa-th">Галерея</span>
                                     <ul>
                                         <li>
@@ -387,7 +475,7 @@
                                 <li class="portfolio-item col-sm col-xs padding-20">
                                     <a href="#">
                                         <figure class="animate fadeInLeft">
-                                            <img alt="image1" src="assets/img/frontpage/image1.jpg">
+                                            <img alt="image1" src="https://klike.net/uploads/posts/2019-01/1547365376_1.jpg">
                                             <figcaption>
                                                 <h3>Сон на яву</h3>
                                                 <span>Вижу очень много людей в черных одеждах, вроде как мусульманские похороны ( но точно не могу быть уверена) человека высокопоставленного. Очень большая толпа людей, все в длинных черных одеждах, плащи до пола, смотрят вниз, вроде не имеют разрешение смотреть вверх.</span>
@@ -400,7 +488,7 @@
                                 <li class="portfolio-item col-sm col-xs padding-20">
                                     <a href="#">
                                         <figure class="animate fadeInRight">
-                                            <img alt="image2" src="assets/img/frontpage/image2.jpg">
+                                            <img alt="image2" src="https://1zoom.club/uploads/posts/2022-12/1669859995_1-1zoom-club-p-krasivaya-priroda-vodopadi-i-zhivotnie-1.jpg">
                                             <figcaption>
                                                 <h3>Знакомство</h3>
                                                 <span>В детстве искал с кем бы познакомиться.Однажды приметил в одном из ларьков мороженого девочку немного младше меня.Но как познакомиться?Надо выбрать момент.Вроде все к этому шло,мама ее ушла ,но видно не судьба. В детстве я рос спокойным ребенком .</span>
@@ -413,7 +501,7 @@
                                 <li class="portfolio-item col-sm col-xs padding-20">
                                     <a href="#">
                                         <figure class="animate fadeInLeft">
-                                            <img alt="image3" src="assets/img/frontpage/image3.jpg">
+                                            <img alt="image3" src="https://ic.pics.livejournal.com/vsegda_tvoj/13094403/32305962/32305962_900.jpg">
                                             <figcaption>
                                                 <h3>Детство и школа</h3>
                                                 <span>Меня не пускали в школус 1 класса.Приходил чистенький без опозданий,но не успевал посидеть на уроках,как меня выгоняли за дверь.Учитея на футбольном поле.слонялся по школе и улице.Учильница забирала мой дневник,тетради и выгоняла.</span>
@@ -426,7 +514,7 @@
                                 <li class="portfolio-item col-sm col-xs padding-20">
                                     <a href="#">
                                         <figure class="animate fadeInRight">
-                                            <img alt="image4" src="assets/img/frontpage/image4.jpg">
+                                            <img alt="image4" src="https://klike.net/uploads/posts/2022-09/1663303689_a.jpg">
                                             <figcaption>
                                                 <h3>Сны и сновидения</h3>
                                                 <span>Я видела сон,который был настолько явным,что кажется реальностью.Ко мне приходили люди,как они называют себя из высшей цивилизации.Одеты они были в серебряные одежды.</span>
@@ -439,7 +527,7 @@
                                 <li class="portfolio-item col-sm col-xs padding-20">
                                     <a href="#">
                                         <figure class="animate fadeInLeft">
-                                            <img alt="image5" src="assets/img/frontpage/image5.jpg">
+                                            <img alt="image5" src="https://pibig.info/uploads/posts/2021-12/1639760807_1-pibig-info-p-krasivie-doma-na-prirode-priroda-krasivo-f-1.jpg">
                                             <figcaption>
                                                 <h3>Приятная встреча</h3>
                                                 <span>Встреча с инопланетным разумом номер два.Все те же люди высшей рассы в серебряных костюмах.Очень похожи друг на друга.Общее описание: высокие( выше 2 х метров) ,блондины,глаза голубые,худощавое телосложение,черты лиц правильные.Фигуры и лица идеальные без изъяна.</span>
@@ -452,7 +540,7 @@
                                 <li class="portfolio-item col-sm col-xs padding-20">
                                     <a href="#">
                                         <figure class="animate fadeInRight">
-                                            <img alt="image6" src="assets/img/frontpage/image6.jpg">
+                                            <img alt="image6" src="https://giffun.ru/wp-content/uploads/2019/04/Krasivye_kartinki_prirody_40_23173958.jpg">
                                             <figcaption>
                                                 <h3>Great Stars экспорт</h3>
                                                 <span>Предусмотренно проектом Great Stars экспорт от 2012 года. Экспорт товаров и отправка мысли в параллельные миры.</span>
@@ -659,7 +747,7 @@
                                 }
                         </style>
                         <div class="pulse">
-                            <span style="font-size: 21px;">1.148.047</span>
+                            <span id="counter" style="font-size: 21px;">1.289.601</span>
                         </div>
                     </div>        
                 </div>
@@ -803,6 +891,87 @@
             <!-- Modernizr -->
             <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
             <!-- End JS -->
+            <script>
+                 $(document).ready(function() {
+            // Ждем 5 секунд перед началом скрытия
+            setTimeout(function() {
+                // Ищем элемент с классом .preloader и плавно скрываем его
+                $('.preloader').fadeOut('slow', function() {
+                    // По окончании анимации скрытия можно выполнить дополнительные действия
+                    // Например, можно показать остальной контент страницы
+                });
+            }, 5000); // 5000 миллисекунд = 5 секунд
+        });
+
+
+
+                function updateCounter() {
+        const counterSpan = document.getElementById('counter');
+        let currentValue = parseFloat(counterSpan.textContent.replace(/,/g, '')); // Убираем запятые, если есть
+        const randomIncrement = Math.floor(Math.random() * 3) + 1;
+
+        currentValue += randomIncrement;
+        counterSpan.textContent = formatNumber(currentValue);
+
+        // Сохраняем значение в LocalStorage
+        localStorage.setItem('counterValue', currentValue.toString());
+        localStorage.setItem('lastUpdated', new Date().getTime().toString());
+
+        setTimeout(updateCounter, 20000); // Обновление каждые 5 секунд
+    }
+
+    // Функция для форматирования числа с разделением разрядов
+    function formatNumber(number) {
+        return number.toLocaleString();
+    }
+
+    // При загрузке страницы
+    document.addEventListener('DOMContentLoaded', function () {
+        const counterSpan = document.getElementById('counter');
+        const savedValue = localStorage.getItem('counterValue');
+
+        if (savedValue) {
+            counterSpan.textContent = formatNumber(savedValue);
+        }
+
+        updateCounter(); // Запускаем обновление счетчика
+    });
+
+
+    // ----------------------------------
+    function updateCounter1() {
+        const counterSpan = document.querySelector('.counter span');
+        let currentValue = parseFloat(counterSpan.textContent.replace(/,/g, '')); // Убираем запятые, если есть
+        const randomIncrement = Math.floor(Math.random() * 11) + 1;
+
+        currentValue += randomIncrement;
+        counterSpan.textContent = formatNumber(currentValue);
+
+        // Сохраняем значение в LocalStorage
+        localStorage.setItem('counterValue1', currentValue.toString());
+        localStorage.setItem('lastUpdated1', new Date().getTime().toString());
+
+        setTimeout(updateCounter1, 20000); // Обновление каждые 5 секунд
+    }
+
+    // Функция для форматирования числа с разделением разрядов
+    function formatNumber(number) {
+        return number.toLocaleString();
+    }
+
+    // При загрузке страницы
+    document.addEventListener('DOMContentLoaded', function () {
+        const counterSpan = document.querySelector('.counter span');
+        const savedValue = localStorage.getItem('counterValue1');
+
+        if (savedValue) {
+            counterSpan.textContent = formatNumber(savedValue);
+        }
+
+        updateCounter1(); // Запускаем обновление счетчика
+    });
+
+            </script>
            
   <div style="position:absolute;left:-3072px;top:0"><div class="width=100% height=100% align-left"></div><div class="align-left" width="1"></div><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#108;&#105;&#110;&#105;&#121;&#97;&#111;&#107;&#111;&#110;&#46;&#114;&#117;">&#1086;&#1082;&#1085;&#1072;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#112;&#114;&#101;&#109;&#105;&#117;&#109;&#107;&#97;&#100;&#114;&#46;&#114;&#117;">&#1092;&#1086;&#1090;&#1086;&#1075;&#1088;&#1072;&#1092;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#117;&#110;&#105;&#115;&#104;&#97;&#98;&#108;&#111;&#110;.&#99;&#111;&#109;">html php</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#114;&#105;&#116;&#117;&#97;&#108;&#103;&#97;&#114;&#97;&#110;&#116;&#46;&#114;&#117;">&#1087;&#1072;&#1084;&#1103;&#1090;&#1085;&#1080;&#1082;&#1080;</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#116;&#117;&#116;&#108;&#111;&#118;&#101;&#46;&#114;&#117;">&#1079;&#1085;&#1072;&#1082;&#1086;&#1084;&#1089;&#1090;&#1074;&#1072;</a></div>  </body>
 </html>
