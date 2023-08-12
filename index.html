@@ -666,7 +666,7 @@
                         <!-- <ul style="list-style-type: none; max-height: 40vh; overflow-y: auto;" class="follower-wrapper__list"></ul>    -->
                         <div class="wrp-counter">
                             <div class="counter">
-                                <span>61.382</span>
+                                <span>63.144</span>
                                 <div class="subscriber">Подписчик</div>
                             </div>
                         </div>
@@ -747,7 +747,7 @@
                                 }
                         </style>
                         <div class="pulse">
-                            <span id="counter" style="font-size: 21px;">1.289.601</span>
+                            <span id="counter" style="font-size: 21px;">1.527.236</span>
                         </div>
                     </div>        
                 </div>
@@ -902,84 +902,6 @@
                 });
             }, 5000); // 5000 миллисекунд = 5 секунд
         });
-
-
-
-        function updateCounter() {
-    const counterSpan = document.getElementById('counter');
-    let currentValue = parseFloat(counterSpan.textContent.replace(/,/g, '')); // Убираем запятые, если есть
-    const randomIncrement = Math.floor(Math.random() * 5) + 1;
-
-    if (!isNaN(currentValue)) {
-        currentValue += randomIncrement;
-        counterSpan.textContent = formatNumber(currentValue);
-
-        // Сохраняем значение в LocalStorage
-        localStorage.setItem('counterValue3', currentValue.toString());
-        localStorage.setItem('lastUpdated3', new Date().getTime().toString());
-    }
-
-    setTimeout(updateCounter, 1200000); // Обновление каждые 20 минут
-}
-
-function formatNumber(number) {
-    return number.toLocaleString();
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const counterSpan = document.getElementById('counter');
-    const savedValue = localStorage.getItem('counterValue3');
-
-    if (savedValue) {
-        const parsedValue = parseFloat(savedValue);
-        if (!isNaN(parsedValue)) {
-            counterSpan.textContent = formatNumber(parsedValue);
-        }
-    }
-
-    updateCounter(); // Запускаем обновление счетчика
-});
-
-
-
-    // ----------------------------------
-    function updateCounter1() {
-    const counterSpan = document.querySelector('.counter span');
-    let currentValue = parseFloat(counterSpan.textContent.replace(/,/g, '')); // Убираем запятые, если есть
-    const randomIncrement = Math.floor(Math.random() * 7) + 1;
-
-    currentValue += randomIncrement;
-    counterSpan.textContent = formatNumber(currentValue);
-
-    // Сохраняем значение в LocalStorage
-    localStorage.setItem('counterValue2', currentValue.toString());
-    localStorage.setItem('lastUpdated2', new Date().getTime().toString());
-
-    setTimeout(updateCounter1, 20 * 60 * 1000); // Обновление каждые 20 минут
-}
-
-// Функция для форматирования числа с разделением разрядов
-function formatNumber(number) {
-    return number.toLocaleString();
-}
-
-// При загрузке страницы
-document.addEventListener('DOMContentLoaded', function () {
-    const counterSpan = document.querySelector('.counter span');
-    let initialValue = 0; // Значение по умолчанию, если начальное значение некорректно
-
-    const savedValue = localStorage.getItem('counterValue2');
-    if (savedValue) {
-        initialValue = parseFloat(savedValue);
-        if (isNaN(initialValue)) {
-            console.error("Initial value is NaN or undefined.");
-            initialValue = 0; // Присвоить значение по умолчанию, если начальное значение некорректно.
-        }
-    }
-
-    counterSpan.textContent = formatNumber(initialValue);
-    updateCounter1(); // Запускаем обновление счетчика
-});
 
 
 
