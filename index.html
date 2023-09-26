@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
         <!-- Google Fonts-->
         <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
@@ -237,10 +238,22 @@ button.wh-ap-btn::before {
     padding-right: 10px;
     width:  80px;
 }
+
+.karini__text {
+    text-align: center;
+    border: 7px solid #6c80e3;
+    border-radius: 5px;
+    font-size: 22px;
+}
         
     </style>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+
     
     <body>
+
+
 
 
         <div class="wh-api">
@@ -483,6 +496,9 @@ button.wh-ap-btn::before {
                                 <li>
                                     <a href="contact.html" class="fa-comment">Контакты</a>
                                 </li>
+                                <li>
+                                    <a href="https://chat.chatgptdemo.net/" class="fa-comment">Наш чат</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -511,6 +527,15 @@ button.wh-ap-btn::before {
                             <div class="clearfix"></div>
                             <!-- End Carousel Indicators -->
                             <!-- Carousel Images -->
+                             <div class="karini" style="background-color: #fff; padding: 15px;">
+                                <h2 style="text-align: center; font-size: 26px;">Реализация наших картин</h2>
+                                <img data-fancybox="images1" src="https://ltdfoto.ru/images/2023/09/26/1.jpg" alt="">
+                              </div>
+                              <div class="karini" style="background-color: #fff; padding: 15px;">
+                                <img data-fancybox="images1" src="https://ltdfoto.ru/images/2023/09/26/2.jpg" alt="">
+                                <p class="karini__text" style="text-align: center;">Из исторической Коллекции цифровой азбуке реализуется 2 картины из двух коллекций спец архива исторической Всегалактической Конторы.
+                                    Цена за 1 спец изделия 10.000000 долларов</p>
+                              </div>
                             <div class="carousel-inner">
                                 <div class="item active">
                                     <img src="assets/img/slideshow/slide1.jpg">
@@ -930,6 +955,9 @@ button.wh-ap-btn::before {
                             <h3 class="margin-bottom-10">Образец меню</h3>
                             <ul class="menu">
                                 <li>
+                                    <a class="fa-tasks" href="https://www.google.com/maps/place/43%C2%B024'36.2%22N+77%C2%B014'03.3%22E/@43.4100565,77.2316682,17z/data=!3m1!4b1!4m4!3m3!8m2!3d43.4100565!4d77.2342431?hl=ru&entry=ttu">Адрес компании</a>
+                                </li>
+                                <li>
                                     <a class="fa-tasks" href="#">Место для рекламы</a>
                                 </li>
                                 <li>
@@ -992,6 +1020,7 @@ button.wh-ap-btn::before {
             <!-- JS -->
             <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
             <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
             <script type="text/javascript" src="assets/js/scripts.js"></script>
             <!-- Isotope - Portfolio Sorting -->
             <script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
@@ -1016,7 +1045,14 @@ button.wh-ap-btn::before {
                     // Например, можно показать остальной контент страницы
                 });
             }, 5000); // 5000 миллисекунд = 5 секунд
+
+
+            Fancybox.bind("[data-fancybox]", {});
+
+
         });
+
+       
 
             </script>
            

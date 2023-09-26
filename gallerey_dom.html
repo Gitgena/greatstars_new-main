@@ -178,6 +178,15 @@ button.wh-ap-btn::before {
         
 
     </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("[data-fancybox]").fancybox({
+      // Параметры настройки, если необходимо
+    });
+  });
+</script>
+
 
   <div class="wh-api">
     <div class="wh-fixed">
@@ -195,10 +204,10 @@ button.wh-ap-btn::before {
           </div>
           <div class="karini">
             <h2 style="text-align: center; font-size: 26px;">Реализация наших картин</h2>
-            <img src="https://ltdfoto.ru/images/2023/09/26/1.jpg" alt="">
+            <img data-fancybox="images" src="https://ltdfoto.ru/images/2023/09/26/1.jpg" alt="">
           </div>
           <div class="karini">
-            <img src="https://ltdfoto.ru/images/2023/09/26/2.jpg" alt="">
+            <img data-fancybox="images" src="https://ltdfoto.ru/images/2023/09/26/2.jpg" alt="">
             <p style="text-align: center;">Можете заказать картины по номеру WhatsApp</p>
           </div>
           <div class="row">
