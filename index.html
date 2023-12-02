@@ -28,6 +28,8 @@
         <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
         <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
         <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.1.0/introjs.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     </head>
 
     <style>
@@ -48,7 +50,7 @@
             content: url(./assets/img/in.png);
             display: block;
             position: fixed;
-            top: 187px;
+            top: 85px;
             left: -20px;
             z-index: 999;  
         }
@@ -248,6 +250,893 @@ button.wh-ap-btn::before {
         
     </style>
 
+<style>
+    img {
+max-width: 100%;
+height: auto;
+vertical-align: bottom;
+}
+
+.top-level-categories ul {
+font-size: 14px !important;
+}
+
+.stories_block {
+min-height: 130px;
+height: 100%;
+margin-top: 45px;
+}
+
+.stories-swiper .swiper {
+width: 100%;
+height: 100%;
+}
+
+#app-stories {
+    margin-top: 15px;
+}
+
+.stories-swiper .swiper-slide {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.stories-swiper .swiper-slide img {
+display: block;
+width: 100%;
+height: 100%;
+-o-object-fit: cover;
+   object-fit: cover;
+}
+
+.stories-cirle-wrapper {
+max-width: 1095px;
+width: 100%;
+margin: 0 auto;
+display: flex;
+justify-content: center;
+overflow-x: auto;
+}
+.stories-cirle-wrapper::-webkit-scrollbar {
+width: 0;
+}
+.stories-cirle-wrapper__circle {
+max-width: 90px;
+min-width: 90px;
+min-height: 125px;
+max-height: 125px;
+margin: 0 5px;
+flex: none;
+white-space: nowrap;
+text-align: center;
+cursor: pointer;
+}
+.stories-cirle-wrapper__circle:first-child {
+margin-left: 10px;
+}
+.stories-cirle-wrapper__circle:last-child {
+margin-right: 10px;
+}
+.stories-cirle-wrapper__picture {
+max-width: 90px;
+min-width: 90px;
+min-height: 90px;
+max-height: 90px;
+overflow: hidden;
+margin: auto;
+margin-bottom: 5px;
+border: 3px solid #b3b3b3;
+border-radius: 50%;
+padding: 3px;
+transition: border-color 0.3s;
+}
+.stories-cirle-wrapper__picture:hover {
+border-color: #74716f;
+}
+.stories-cirle-wrapper__picture img {
+border-radius: 50%;
+}
+.stories-cirle-wrapper__title {
+font-size: 15px;
+color: #fff;
+text-transform: capitalize;
+}
+
+.slider-app-stroies {
+height: 100vh;
+min-width: 100vw;
+max-width: 100vw;
+width: 100vw;
+position: fixed;
+top: 0;
+left: 0;
+background-color: #000;
+-webkit-animation: fadeInFromNone 0.3s alternate;
+        animation: fadeInFromNone 0.3s alternate;
+z-index: 99999999999;
+}
+
+.sound {
+padding: 10px;
+}
+
+.stories-slider-none {
+display: none;
+}
+
+.stories-swiper .swiper-slide {
+transition: transform 0.4s ease;
+}
+.stories-swiper .swiper-slide:not(.swiper-slide-active) {
+transform: scale(0.8, 0.8) !important;
+}
+
+.swiperStoriesProd .swiper {
+width: 100%;
+height: 100%;
+}
+
+.swiperStoriesProd .swiper-slide {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.player {
+max-width: 647px;
+width: 100%;
+padding: 20px;
+}
+.player-wrapper {
+position: relative;
+}
+.player-wrapper::before {
+content: "";
+background: #000;
+left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+z-index: 9999;
+}
+.player-wrapper__muted {
+position: relative;
+color: #fff;
+background: transparent;
+font-weight: 600;
+}
+.player-wrapper__off-muted {
+display: none;
+}
+.player-wrapper__timeline-wrp {
+display: flex;
+align-content: center;
+height: 3px;
+margin-bottom: 5px;
+position: absolute;
+left: 5px;
+top: 5px;
+right: 5px;
+z-index: 999;
+}
+.player-wrapper__timeline {
+background-color: hsla(0deg, 0%, 100%, 0.2);
+height: 100%;
+flex: 1;
+border-radius: 3px;
+margin-left: 3px;
+}
+.player-wrapper__timeline:first-child {
+margin-left: 0;
+}
+.player-wrapper__process {
+height: 100%;
+}
+.player-wrapper__story-info {
+display: flex;
+align-items: center;
+position: absolute;
+top: 20px;
+font-size: 14px;
+color: #fff;
+}
+.player-wrapper__story-info-picture {
+width: 35px;
+height: 35px;
+background-repeat: no-repeat;
+background-size: contain;
+border-radius: 50%;
+margin: 0 10px;
+}
+.player-wrapper__story-info-title {
+font-weight: 600;
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+}
+.player-wrapper__story-prod-link {
+color: red;
+font-size: 44px;
+text-align: center;
+}
+.player-wrapper__prev {
+position: absolute;
+left: 0;
+bottom: 0;
+top: 0;
+width: 50%;
+z-index: 9;
+}
+.player-wrapper__next {
+position: absolute;
+right: 0;
+bottom: 0;
+top: 0;
+width: 50%;
+z-index: 9;
+}
+.player-wrapper__chunk {
+display: none;
+}
+.player-wrapper__chunk-video {
+width: 100%;
+height: auto;
+max-height: 100%;
+}
+.player-wrapper__chunk-active {
+display: block;
+}
+.player-wrapper__chunk-goods {
+margin-top: 50px;
+}
+.player-wrapper__chunk-goods-text span {
+position: relative;
+}
+.player-wrapper__chunk-goods-text span::before {
+content: "";
+position: absolute;
+left: -13px;
+top: 50%;
+display: inline-block;
+border-bottom: 2px solid;
+border-left: 2px solid;
+width: 6px;
+height: 6px;
+transform: rotate(135deg) translateY(17%);
+}
+.player-wrapper__chunk-goods-wrp-image {
+max-width: 205px;
+max-height: 205px;
+margin: auto;
+text-align: center;
+}
+.player-wrapper__chunk-goods-wrp-image img {
+max-width: 205px;
+max-height: 205px;
+height: auto;
+width: auto;
+}
+.player-wrapper__chunk-goods-wrp-link {
+margin-top: 5px;
+height: 40px;
+overflow: hidden;
+}
+.player-wrapper__chunk-goods-wrp-link-url {
+color: #4d4d4d;
+font-size: 14px;
+}
+.player-wrapper__chunk-goods-wrp {
+display: flex;
+justify-content: center;
+}
+.player-wrapper__chunk-goods-wrp-item {
+position: relative;
+max-width: 220px;
+color: #000;
+display: flex;
+justify-content: end;
+border-radius: 15px;
+padding: 10px;
+transition: 0.2s box-shadow;
+}
+.player-wrapper__chunk-goods-wrp-item:hover {
+box-shadow: 0 0 5px 0px #d3d3d3;
+}
+.player-wrapper__chunk-goods-wrp-item:hover .player-wrapper__chunk-goods-wrp-link-url {
+color: blue;
+}
+.player-wrapper__chunk-goods-wrp-prices {
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-weight: 600;
+}
+.player-wrapper__flex {
+display: flex;
+align-items: baseline;
+flex-direction: row-reverse;
+}
+.player-wrapper__chunk-goods-wrp-price {
+font-size: 20px;
+color: #4d4d4d;
+margin-right: 7px;
+}
+.player-wrapper__chunk-goods-wrp-price_old-price {
+font-size: 16px;
+color: #727272;
+font-weight: 600;
+font-weight: normal;
+}
+.player-wrapper__chunk-goods-wrp-price_old-price span {
+position: relative;
+}
+.player-wrapper__chunk-goods-wrp-price_old-price span:before {
+content: "";
+border-bottom: 2px solid #f56d6d;
+position: absolute;
+width: 100%;
+height: 50%;
+transform: rotate(-12deg);
+}
+.player-wrapper__chunk-goods-wrp-price {
+text-decoration: none;
+}
+.player-wrapper__chunk-goods-wrp-add-cart {
+background-color: #dd4003;
+width: 76px;
+padding: 0 3px;
+cursor: pointer;
+background-size: 33px;
+color: #fff;
+border: 1px solid #f15a2c;
+background: url(https://simg.marwin.kz/static/version1662626232/frontend/Astrio/meloman/ru_RU/images/cart.svg) #f15a2c no-repeat center;
+border-radius: 5px;
+height: 40px;
+transition: 0.3s background-color;
+}
+.player-wrapper__chunk-goods-wrp-add-cart:hover {
+background-color: #bd3c08;
+}
+
+.swiperStoriesProd {
+position: relative;
+padding: 20px 0 43px 0;
+margin: 0 30px;
+}
+.swiperStoriesProd-wrp {
+position: relative;
+max-width: 1600px;
+margin: 0 auto;
+}
+
+.swiperStoriesProd .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after,
+.swiperStoriesProd .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+content: "";
+}
+
+.swiperStoriesProd .swiper-button-next-stories-prod {
+background-color: #f3f3f3;
+background-image: url("https://simg.marwin.kz/static/version1662626232/frontend/Astrio/meloman/ru_RU/images/nav_next.svg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: 10px;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+right: 0;
+}
+
+.swiperStoriesProd .swiper-button-prev-stories-prod {
+background-color: #f3f3f3;
+background-image: url("https://simg.marwin.kz/static/version1662626232/frontend/Astrio/meloman/ru_RU/images/nav_prev.svg");
+background-repeat: no-repeat;
+background-position: center;
+background-size: 10px;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+left: 0;
+}
+
+.swiperStoriesProd .swiper-button-next.swiper-button-next-stories-prod.swiper-button-disabled,
+.swiperStoriesProd .swiper-button-prev.swiper-button-prev-stories-prod.swiper-button-disabled {
+opacity: 0;
+}
+
+.show-goods {
+display: none;
+position: absolute;
+bottom: 0;
+width: 100%;
+background-color: #fff;
+box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.4);
+z-index: 3;
+-webkit-animation: fadeInFromNone 0.3s alternate;
+        animation: fadeInFromNone 0.3s alternate;
+transition: 0.5s;
+}
+.show-goods_opened {
+display: block;
+}
+
+.overflowBg__visible {
+position: absolute;
+left: 0;
+top: 0;
+right: 0;
+bottom: 0;
+background: rgba(0, 0, 0, 0.59);
+z-index: 2;
+transition: 0.3s background;
+}
+
+.show-goods-hide {
+background: #000;
+position: absolute;
+left: 0;
+top: 0;
+bottom: 0;
+right: 0;
+}
+
+.act-block {
+background-color: #fff;
+}
+
+.animate-time-line {
+border-radius: 3px;
+background-color: #fff;
+-webkit-animation-name: timeLineAnime;
+        animation-name: timeLineAnime;
+transition-property: width;
+animation-timing-function: linear;
+}
+
+@-webkit-keyframes timeLineAnime {
+0% {
+  width: 0;
+}
+100% {
+  width: 100%;
+}
+}
+
+@keyframes timeLineAnime {
+0% {
+  width: 0;
+}
+100% {
+  width: 100%;
+}
+}
+@-webkit-keyframes fadeInFromNone {
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+@keyframes fadeInFromNone {
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+.chunk-goods-text-show {
+display: none;
+}
+
+.sound_muted {
+padding: 20px;
+position: absolute;
+left: 15px;
+top: 15px;
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+z-index: 2;
+cursor: pointer;
+}
+
+.stories-modal__mute-label {
+position: absolute;
+white-space: nowrap;
+top: 50%;
+padding-left: 10px;
+transform: translateY(-58%);
+font-size: 14px;
+left: 17px;
+}
+
+.close_strories {
+padding: 20px;
+background: transparent;
+position: absolute;
+right: 15px;
+top: 15px;
+z-index: 2;
+cursor: pointer;
+}
+
+.stories-goods__link {
+position: absolute;
+bottom: 8.7%;
+left: 50%;
+transform: translateX(-50%);
+z-index: 12;
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+text-decoration: none !important;
+color: #fff !important;
+cursor: pointer;
+background-color: rgba(0, 0, 0, 0.8);
+padding: 10px 30px 10px 30px;
+font-size: 17px;
+border-radius: 5px;
+transition: 0.3s background-color;
+}
+.stories-goods__link:hover {
+background-color: rgba(184, 80, 11, 0.918);
+}
+
+.stories-goods__link-hide {
+display: none;
+}
+
+.show-goods-button {
+position: absolute;
+-webkit-user-select: none;
+   -moz-user-select: none;
+    -ms-user-select: none;
+        user-select: none;
+color: #fff;
+cursor: pointer;
+background-color: rgba(0, 0, 0, 0.8);
+overflow: hidden;
+z-index: 10;
+padding: 10px 20px 10px 27px;
+left: 50%;
+transform: translateX(-50%);
+font-size: 17px;
+border-radius: 5px;
+bottom: calc(7% - 10px);
+transition: 0.3s background-color;
+}
+.show-goods-button::after {
+content: "";
+position: absolute;
+display: inline-block;
+border-bottom: 2px solid;
+border-left: 2px solid;
+transform: rotate(135deg);
+left: 11px;
+top: 21px;
+width: 7px;
+height: 7px;
+}
+.show-goods-button::before {
+background-color: #ff7675;
+content: "";
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: -1;
+transition: all 0.5s ease;
+}
+.show-goods-button__hover::before {
+width: 100%;
+height: 0%;
+transform: translate(-50%, -50%) rotate(45deg);
+}
+.show-goods-button__hover:hover::before {
+height: 500%;
+}
+.show-goods-button__hide {
+display: none;
+}
+
+.change_on-muted {
+display: none;
+}
+
+.change_off-muted {
+display: block;
+}
+
+.addColorBtn {
+display: none;
+color: #000;
+}
+.addColorBtn::before {
+transition: 0.2s;
+transform: rotate(315deg);
+top: 8px;
+}
+
+.lds-dual-ring {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+display: inline-block;
+width: 80px;
+height: 80px;
+z-index: -1;
+}
+.lds-dual-ring::after {
+content: " ";
+display: block;
+width: 64px;
+height: 64px;
+border-radius: 50%;
+border: 2px solid #fff;
+border-color: #fff transparent #fff transparent;
+-webkit-animation: lds-dual-ring 1.2s linear infinite;
+        animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@-webkit-keyframes lds-dual-ring {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+
+@keyframes lds-dual-ring {
+0% {
+  transform: rotate(0deg);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+
+.show-goods-button {
+display: none;
+}
+
+
+@media screen and (max-width: 992px) {
+.stories_block {
+  margin-top: 20px;
+  min-height: 119px;
+}
+.stories-cirle-wrapper__circle {
+  margin-right: 15px;
+  max-width: 80px;
+  min-width: 80px;
+  max-height: 117px;
+  min-height: 117px;
+}
+.stories-cirle-wrapper__picture {
+  max-width: 80px;
+  min-width: 80px;
+  max-height: 80px;
+  min-height: 80px;
+}
+}
+@media screen and (max-width: 930px) {
+.stories-cirle-wrapper {
+  justify-content: unset;
+}
+}
+@media screen and (max-width: 768px) {
+.stories_block {
+  margin-top: 15px;
+  min-height: 102px;
+}
+.stories-cirle-wrapper__circle {
+  max-width: 70px;
+  min-width: 70px;
+  min-height: 100px;
+  max-height: 100px;
+}
+.stories-cirle-wrapper__picture {
+  max-width: 70px;
+  min-width: 70px;
+  max-height: 70px;
+  min-height: 70px;
+  border-width: 2px;
+}
+.stories-cirle-wrapper__title {
+  font-size: 12px;
+  white-space: nowrap;
+}
+.swiperStoriesProd {
+  margin: 0;
+}
+.player-wrapper__chunk-goods-wrp-add-cart:not([disabled]):hover {
+  background-color: #bd3c08;
+}
+}
+@media screen and (max-width: 600px) {
+.player {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+}
+.stories-modal__mute-label {
+  display: none;
+}
+.sound_muted {
+  top: 85px;
+  left: 0;
+}
+}
+@media screen and (max-width: 599px) {
+.player {
+  padding: 0;
+}
+.stories-swiper .swiper-slide {
+  transition: transform 0s ease;
+}
+.stories-swiper .swiper-slide:not(.swiper-slide-active) {
+  transform: scale(0) !important;
+}
+.player-wrapper__chunk-goods-wrp-item {
+  margin-left: 30px;
+}
+.player-wrapper__chunk-goods-wrp-image {
+  max-width: 136px;
+  max-height: 136px;
+}
+.player-wrapper__chunk-goods-wrp-image img {
+  max-width: 136px;
+  max-height: 136px;
+}
+.show-goods-button {
+  bottom: calc(2% - 10px);
+}
+.stories-goods__link {
+  bottom: 20%;
+}
+.swiperStoriesProd {
+  padding: 20px 0 60px 0;
+}
+}
+@media screen and (max-width: 560px) {
+.stories-goods__link {
+  bottom: 15%;
+}
+}
+@media screen and (max-width: 530px) {
+.stories-goods__link {
+  bottom: 11%;
+}
+}
+@media screen and (max-width: 518px) {
+.show-goods-button {
+  bottom: calc(3% - 10px);
+}
+}
+@media screen and (max-width: 512px) {
+.show-goods-button {
+  bottom: calc(5% - 10px);
+}
+}
+@media screen and (max-width: 502px) {
+.show-goods-button {
+  bottom: calc(7% - 10px);
+}
+.stories-goods__link {
+  bottom: 5%;
+}
+}
+@media screen and (max-width: 489px) {
+.show-goods-button {
+  bottom: calc(9% - 10px);
+}
+}
+@media screen and (max-width: 478px) {
+.player-wrapper__chunk-goods-wrp-price,
+.player-wrapper__chunk-goods-wrp-price_old-price {
+  font-size: 15px;
+}
+.player-wrapper__chunk-goods-wrp-link a {
+  font-size: 14px;
+}
+.show-goods-button {
+  bottom: calc(12% - 10px);
+  white-space: nowrap;
+}
+}
+@media screen and (max-width: 468px) {
+.show-goods-button {
+  bottom: calc(15% - 10px);
+}
+}
+@media screen and (max-width: 450px) {
+.show-goods-button {
+  bottom: calc(17% - 10px);
+}
+}
+@media screen and (max-width: 440px) {
+.show-goods-button {
+  bottom: calc(19% - 10px);
+}
+}
+@media screen and (max-width: 430px) {
+.show-goods-button {
+  bottom: calc(21% - 10px);
+}
+}
+@media screen and (max-width: 415px) {
+.show-goods-button {
+  bottom: calc(23% - 10px);
+}
+}
+@media screen and (max-width: 415px) {
+.show-goods-button {
+  bottom: calc(23% - 10px);
+}
+}
+@media screen and (max-width: 412px) {
+.show-goods-button {
+  bottom: calc(24% - 10px);
+}
+}
+@media screen and (max-width: 404px) {
+.show-goods-button {
+  bottom: calc(25% - 10px);
+}
+}
+@media screen and (max-width: 398px) {
+.show-goods-button {
+  bottom: calc(27% - 10px);
+}
+}
+@media screen and (max-width: 388px) {
+.show-goods-button {
+  bottom: calc(29% - 10px);
+}
+}
+@media screen and (max-width: 377px) {
+.show-goods-button {
+  bottom: calc(31% - 10px);
+}
+}
+@media screen and (max-width: 366px) {
+.show-goods-button {
+  bottom: calc(33% - 10px);
+}
+}
+@media screen and (max-width: 356px) {
+.show-goods-button {
+  bottom: calc(35% - 10px);
+}
+}
+@media screen and (max-width: 345px) {
+.show-goods-button {
+  bottom: calc(37% - 10px);
+}
+}
+@media screen and (max-width: 335px) {
+.show-goods-button {
+  bottom: calc(39% - 10px);
+}
+}
+@media screen and (max-width: 320px) {
+.show-goods-button {
+  bottom: calc(40% - 10px);
+}
+}
+.centerJustyGoods {
+justify-content: center !important;
+}
+  </style>
+
+
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
 
     
@@ -308,6 +1197,9 @@ button.wh-ap-btn::before {
                     </div>
                 </div>
             </div>
+            <div id="app-stories"></div>
+            
+
             <!-- Top Menu -->
             <div id="hornav" class="container no-padding">
                 <div class="row">
@@ -585,7 +1477,7 @@ button.wh-ap-btn::before {
                         <img src="https://ltdfoto.ru/images/2023/09/09/c1ab13b6-f5a6-4629-bdf3-9dc03d8a6578.jpg">
                     </div>
                     <div class="row margin-vert-40">
-                        <strong style="margin-left: 15px;">Наш эксклюзивный флаг</strong>
+                        <strong style="margin-left: 15px;" id="element1">Наш эксклюзивный флаг</strong>
                       <a href="https://gitgena.github.io/greatstars-usa-main/">
                         <img src="https://ltdfoto.ru/images/2023/08/02/flaggggg.jpg">
                       </a>
@@ -822,7 +1714,7 @@ button.wh-ap-btn::before {
                         <!-- <ul style="list-style-type: none; max-height: 40vh; overflow-y: auto;" class="follower-wrapper__list"></ul>    -->
                         <div class="wrp-counter">
                             <div class="counter">
-                                <span>69.021</span>
+                                <span>68.201</span>
                                 <div class="subscriber">Подписчик</div>
                             </div>
                         </div>
@@ -903,7 +1795,7 @@ button.wh-ap-btn::before {
                                 }
                         </style>
                         <div class="pulse">
-                            <span id="counter" style="font-size: 21px;">1.625.137</span>
+                            <span id="counter" style="font-size: 21px;">1.625.207</span>
                         </div>
                     </div>        
                 </div>
@@ -1048,6 +1940,8 @@ button.wh-ap-btn::before {
             <script type="text/javascript" src="assets/js/jquery.sticky.js" charset="utf-8"></script>
             <!-- Slimbox2-->
             <script type="text/javascript" src="assets/js/slimbox2.js" charset="utf-8"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.1.0/intro.min.js"></script>
             <!-- Modernizr -->
             <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
             <!-- End JS -->
@@ -1068,9 +1962,1204 @@ button.wh-ap-btn::before {
 
         });
 
+
+
+        $(document).ready(function() {
+    var visitedBefore = localStorage.getItem('visitedBefore');
+
+    if (!visitedBefore) {
+      var intro = introJs();
+
+      intro.setOptions({
+        steps: [
+          {
+            element: document.querySelector('#element1'),
+            intro: "Это первый элемент на странице",
+            position: 'right'
+          },
+          // Добавьте другие шаги по необходимости
+        ]
+      });
+
+      intro.start();
+
+      $('#element1').get(0).scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      localStorage.setItem('visitedBefore', true);
+    } else {
+      // Если пользователь уже посещал страницу, ничего не делаем или показываем другое содержимое
+      // Например, скрываем подсказки или показываем другие блоки информации
+    }
+  });
+
+
+
+
        
 
             </script>
+
+            
+    <script>
+        $.ajax({
+        url: './assets/stories.json',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) { 
+            console.log(response);
+          console.log(response);
+          if(response?.items) {
+            console.log('response', response);
+            const storiesOptions = [];
+            response.items.forEach((story) => {
+              const readyStory = {
+                id: story.story_id,
+                name: story.name,
+                enable: story.enable,
+                photo: story.thumbnail,
+                items: [],
+              };
+  
+              readyStory.items = story.contents.map((item) => ({
+                id: item.content_id,
+                type: item.type,
+                url: item.content_path,
+                prod: item.link,
+                goods: item.products?.constructor == Object ? Object.values(item.products) : []
+              }));
+  
+              storiesOptions.push(readyStory);
+            });
+            
+            stroriesAjaxResponse(storiesOptions);
+          }
+        }
+      });
+  
+      function stroriesAjaxResponse(stories) {
+        new StoriesSlider(document.getElementById("app-stories"), { stories });
+      }
+  
+      class StoriesSlider  {
+    constructor(element, options) {
+      this.element = element;
+      this.options = options;
+      this.currentStory = 0;
+      this.storiesIndexes = this.getInitialStoriesIndexes();
+      this.muted = true;
+      this.opened = false;
+      this.arrayIndexs = [];
+      this.unique_id = [];
+      this.initialId = ['20','21','22','23','24','25','26','27','28'];
+      this.colorCircleActive = '#b3b3b3';
+      this.init();
+    }
+  
+    
+    makeStoriesCircles() {
+      this.storiesCircles = document.createElement("div");
+      this.storiesCircles.classList.add("stories-cirle");
+      let template = '<div class="container-stories"><div class="stories-cirle-wrapper">';
+  
+      if (this.options?.stories?.constructor === Array ) {
+        this.options.stories.forEach((story,i) => {
+          template += this.getStoryCircleTemplate(story.name, story.photo);
+  
+          
+          this.unique_id.push(this.options.stories[i].id);
+          
+        });
+      }
+  
+      template += '</div></div>';
+      
+  
+      this.storiesCircles.innerHTML = template;
+  
+      this.element.append(this.storiesCircles);
+         
+          localStorage.setItem('unique_id_',  JSON.stringify(this.unique_id));
+      
+          this.unique_id.forEach((unicIdElm,index) => {
+            if(unicIdElm != this.initialId[index]) {
+              localStorage.setItem('unique_id_',  JSON.stringify(this.initialId));
+            //   this.loadingCrearElementLocalStorage(index);
+              console.log('не совпало, обновляем localStorage');
+            }
+          });
+      
+      
+      [...this.storiesCircles.querySelectorAll('.stories-cirle-wrapper__circle')].forEach((circle, index) => {
+        circle.classList.add('megaId');
+        circle.id = `megaId_${index}`;
+  
+        circle.dataset.unique_id = this.unique_id[index];
+    
+  
+        circle.addEventListener('click', () => {
+          if(this.modal.classList.contains('stories-slider-none')) {
+            this.modal.classList.remove('stories-slider-none');
+  
+            const currentItem = this.options.stories[this.modalSwiper.activeIndex].items[this.storiesIndexes[this.modalSwiper.activeIndex]];
+            
+            //THIS ADDING ANIMATION TO THE FIRST ELEMENT
+            let activeElmAnimation = this.modal.children[0].children[0].children[index].querySelector('.player-wrapper__timeline').children[0];
+  
+            // const currentIndexCircle = this.modal.parentNode.children[0].children[0].children[0].children[index];
+            // console.log(currentIndexCircle);
+            // console.log(currentIndexCircle.children[0].style.borderColor = 'green');
+            // console.log(this.storiesIndexes[this.modalSwiper.activeIndex]);
+            
+  
+            let videoDuration = this.modal.children[0].children[0].children[index].querySelector('video').duration + 's';
+            
+                activeElmAnimation.classList.add('animate-time-line');
+                activeElmAnimation.style.animationDuration = videoDuration;
+  
+                let linkAppend = this.modal.children[0].children[0].children[index].querySelector('.player-wrapper__chunk-wrp');
+        
+                if(currentItem.goods.length > 0) {
+                  this.showGoods.innerHTML = this.getGoodsTemplate(currentItem);
+                  this.goodsButton.classList.remove('show-goods-button__hide');
+                }
+                else {
+                  this.showGoods.innerHTML = '';
+                  this.goodsButton.classList.add('show-goods-button__hide');
+                  linkAppend.append(this.showGoodsButtonLink(currentItem.prod))
+                }
+  
+          }
+  
+          if(!this.opened) {
+            this.initEvents();
+            this.opened = true;
+          }
+  
+          this.modalSwiper.slideTo(index);
+          this.playVideo();
+  
+          const currentItem = this.options.stories[this.modalSwiper.activeIndex].items[this.storiesIndexes[this.modalSwiper.activeIndex]];
+          this.showGoods.innerHTML = this.getGoodsTemplate(currentItem);
+  
+        });
+      });
+  
+  
+    }
+  
+    makeStoriesModal(children) {
+  
+      if (children?.constructor !== String) return "";
+  
+      if (!this.modal) {
+        this.modal = document.createElement("div");
+        this.modal.classList.add("slider-app-stroies", "stories-slider-none");
+        this.showGoods = document.createElement('div');
+        this.showGoods.classList.add('show-goods');
+        this.showGoods.innerHTML = this.getGoodsTemplate();
+        this.mountedSound = document.createElement('div');
+        this.mountedSound.classList.add('sound_muted');
+        this.mountedSound.innerHTML = this.makeStoriesModalMuted();
+        const closeButton = this.getModalCloseButton();
+  
+        const swiperElement = this.makeSwiperOnModal();
+  
+        swiperElement.querySelector(".swiper-wrapper").innerHTML = children;
+  
+        this.modal.append(swiperElement);
+        this.modal.append(this.mountedSound);
+        this.modal.append(closeButton);
+        this.element.append(this.modal);
+        this.modal.append(this.showGoodsButton());
+        this.modal.append(this.showGoods);
+        this.modal.append(this.owerflowBg());
+      }
+    }
+  
+    closeModal() {
+      this.pauseVideo();
+      this.modal.classList.add('stories-slider-none');
+    }
+    
+    // -------------------
+  
+    makeStoriesModalMuted() {
+      return `
+      <div class="player-wrapper__muted">
+          <div class="player-wrapper__on-muted">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.03662 13.1667L11.5 16.8289V3.17108L7.03662 6.83333H1.5V13.1667H7.03662ZM0 14.6667V5.33333H6.5L13 0V20L6.5 14.6667H0Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M19.75 10C19.75 12.412 18.6368 14.7895 16.4785 16.5776L15.5215 15.4224C17.3632 13.8968 18.25 11.9311 18.25 10C18.25 8.06887 17.3632 6.1032 15.5215 4.57756L16.4785 3.42244C18.6368 5.21051 19.75 7.58799 19.75 10Z"></path></svg>
+              <span class="stories-modal__mute-label">Звук включен</span>
+          </div>
+          <div class="player-wrapper__off-muted">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M13 0V9.93934L11.5 8.43934V3.17108L8.60617 5.54551L7.54036 4.4797L13 0Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M13 14.0438L17.9697 19.0304L19.0304 17.9697L1.55941 0.439579L0.498747 1.50024L4.31891 5.33333H0V14.6667H6.5L13 20V14.0438ZM11.5 12.5387V16.8289L7.03662 13.1667H1.5V6.83333H5.81384L11.5 12.5387Z"></path></svg>
+              <span class="stories-modal__mute-label">Звук выключен</span>
+          </div>
+      </div>
+      `
+    }
+  
+    // -------------------
+  
+    makeSwiperOnModal() {
+   
+      const swiperMainElement = document.createElement("div");
+      swiperMainElement.classList.add("stories-swiper");
+      swiperMainElement.innerHTML = '<div class="swiper-wrapper"></div>';
+  
+      this.modalSwiper = new Swiper(swiperMainElement, {
+        slidesPerView: this.options.stories.length,
+        spaceBetween: 30,
+        centeredSlides: true,
+        noSwiping: false,
+        noSwipingClass: "swiper-slide",
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 0
+          },
+          600: {
+            slidesPerView: 1.25,
+            spaceBetween: 0
+          },
+          620: {
+            slidesPerView: 1.28,
+            spaceBetween: 0
+          },
+          640: {
+            slidesPerView: 1.32,
+            spaceBetween: 0
+          },
+          658: {
+            slidesPerView: 1.35,
+            spaceBetween: 0
+          },
+          698: {
+            slidesPerView: 1.43,
+            spaceBetween: 0
+          },
+          728: {
+            slidesPerView: 1.5,
+            spaceBetween: 0
+          },
+          825: {
+            slidesPerView: 1.7,
+            spaceBetween: 0
+          },
+          992: {
+            slidesPerView: 2,
+            spaceBetween: 0
+          },
+          1090: {
+            slidesPerView: 2.1,
+            spaceBetween: 0,
+          },
+          1100: {
+            slidesPerView: 2.45,
+            spaceBetween: 0,
+          },
+          1110: {
+            slidesPerView: 2.52,
+            spaceBetween: 0,
+  
+          },
+          1290: {
+            slidesPerView: 2.8,
+            spaceBetween: 0,
+          },
+          1320: {
+            slidesPerView: 2.8,
+            spaceBetween: 0
+          },
+          1420: {
+            slidesPerView: 2.9,
+            spaceBetween: 0
+          },
+          1540: {
+            slidesPerView: 3.3,
+            spaceBetween: 0
+          }
+        }
+      });
+  
+      return swiperMainElement;
+    }
+  
+    makeStoriesTemplate() {
+      let template = "";
+  
+      if (this.options?.stories?.constructor === Array) {
+        this.options.stories.forEach((story) => {
+          let storyItems = "";
+  
+          if (story?.items?.constructor === Array) {
+            const needItem = [...story.items].shift();
+  
+            storyItems += this.getStoryItemTemplate(story, needItem);
+          }
+  
+          template += storyItems;
+        });
+      }
+  
+      return template;
+    }
+  
+    getInitialStoriesIndexes() {
+      const initial = {};
+  
+      this.options.stories.forEach((_story, index) => {
+        initial[index] = 0;
+      });
+  
+      return initial;
+    }
+  
+  
+    showGoodsButtonLink (prodLink) {
+      this.BtnLink = document.createElement("a");
+      this.BtnLink.classList.add('stories-goods__link');
+      this.BtnLink.href = prodLink;
+      this.BtnLink.innerHTML = 'Перейти';
+  
+      return this.BtnLink;
+    }
+  
+    showGoodsButton() {
+      this.goodsButton = document.createElement('div');
+      this.goodsButton.classList.add('show-goods-button', 'show-goods-button__hover');
+      this.goodsButton.innerHTML = 'Показать товары';
+      this.goodsButton.onclick = (e) => {
+  
+      this.swiperInitPod();
+  
+        const originalElement = e.currentTarget || e.originalTarget;
+        const goodsElement = originalElement.nextElementSibling;
+  
+        const visibleBg = originalElement.parentNode.querySelector('.overflowBg');
+              visibleBg.classList.toggle('overflowBg__visible');
+  
+        if(goodsElement) {
+          goodsElement.classList.toggle('show-goods_opened');
+          let isOpen = goodsElement.classList.contains('show-goods_opened');
+  
+          if(isOpen) {
+            this.pauseVideo(false);
+          }
+          else {
+            this.playVideo();
+          }
+  
+          if(this.goodsButton.innerHTML = isOpen) {
+            this.goodsButton.innerHTML = 'Скрыть товары';
+            this.goodsButton.classList.add('addColorBtn');
+          } else {
+            this.goodsButton.innerHTML = 'Показать товары';
+            this.goodsButton.classList.remove('addColorBtn');
+          }
+        }
+  
+        e.stopPropagation();
+      }
+  
+      return this.goodsButton;
+    }
+  
+    owerflowBg = () => {
+      this.overflowBg = document.createElement('div');
+      this.overflowBg.classList.add('overflowBg');
+      this.overflowBg.onclick = (e) => {
+        
+        const originalElement = e.currentTarget || e.originalTarget;
+  
+        const visibleBg = originalElement.parentNode.querySelector('.overflowBg');
+  
+        if(visibleBg) {
+          visibleBg.classList.toggle('overflowBg__visible');
+          let isOpen = visibleBg.classList.contains('overflowBg__visible');
+          visibleBg.parentNode.querySelector('.show-goods').classList.remove('show-goods_opened');
+  
+          if(isOpen) {
+            this.pauseVideo(false);
+          }
+          else {
+            this.playVideo();
+          }
+  
+          if(this.goodsButton.innerHTML = isOpen) {
+            this.goodsButton.innerHTML = 'Скрыть товары';
+            this.goodsButton.classList.add('addColorBtn');
+          } else {
+            this.goodsButton.innerHTML = 'Показать товары';
+            this.goodsButton.classList.remove('addColorBtn');
+          }
+        }
+  
+      }
+  
+      return this.overflowBg;
+    }
+  
+    
+    getStoryCircleTemplate(name, photo) {
+      return `
+      <div class="stories-cirle-wrapper__circle">
+        <div class="stories-cirle-wrapper__picture">
+          <img src="${photo}" alt="${name}"></img>
+        </div>
+        <div class="stories-cirle-wrapper__title">${name}</div>
+      </div>`;
+    }
+  
+  
+    getStoryItemTemplate(story, item) {
+      return `
+        <div class="swiper-slide">
+          <div class="player">
+            <div class="player-wrapper">
+                <div class="player-wrapper__timeline-wrp">
+                ${this.getStoryItemTimelineTemplate(story)}
+                </div>
+                <div class="player-wrapper__nav">
+                    <div class="player-wrapper__prev"></div>
+                    <div class="player-wrapper__next"></div>
+                </div>
+                <div class="player-wrapper__chunk-wrp">
+                  ${this.getStoryItemTypeTemplate(item, story)}
+                </div>
+                <div class="player-wrapper__story-info">
+                  <div class="player-wrapper__story-info-picture" style="background-image: url('${story.photo}')"></div>
+                  <div class="player-wrapper__story-info-title">${story.name}</div>
+                </div>
+            </div>
+            ${this.preloader()}
+          </div>
+        </div>`;
+    }
+  
+  
+    preloader() {
+      return `
+      <div class="lds-dual-ring"></div>
+      `;
+    }
+  
+    getStoryItemTimelineTemplate(story) {
+      let template = '';
+  
+      story.items.forEach(() => {
+        template += `<div class="player-wrapper__timeline">
+          <div class="player-wrapper__process"></div>
+        </div>`;
+      });
+  
+      return template;
+    }
+  
+    swiperInitPod = () => {
+      var swiperProd = new Swiper(".swiperStoriesProd", {
+        // slidesPerView: 'auto',
+        // spaceBetween: 20,
+        // centeredSlidesBounds: true,
+        // centeredSlides: true,
+        navigation: {
+          nextEl: ".swiper-button-next-stories-prod",
+          prevEl: ".swiper-button-prev-stories-prod",
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 2.5,
+            spaceBetween: 20
+          },
+          576: {
+            slidesPerView: 2.5,
+            spaceBetween: 20
+          },
+          769: {
+            slidesPerView: 3.5,
+            spaceBetween: 20
+          },
+          992: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          1200: {
+            slidesPerView: 5,
+            spaceBetween: 0
+          },
+          1600: {
+            slidesPerView: 6,
+            spaceBetween: 0,
+          },
+        }
+      });
+  
+      swiperProd.update();
+    }
+  
+    getGoodsTemplate(storyItem) {
+      if(!storyItem?.goods) return '';
+  
+      let template = `
+      <div class="swiper swiperStoriesProd">
+        <div class="swiper-wrapper">`;
+  
+      storyItem.goods.forEach((item, index) => {
+  
+        
+  
+        Promise.resolve(true).then(() => {
+          const currentItem = this.modal.children[4].querySelector('.swiper-wrapper');
+  
+          if(index < 6) {
+            currentItem.classList.add('centerJustyGoods');
+          }else if(index < 3) {
+            currentItem.classList.add('centerJustyGoods');
+          }else {
+            currentItem.classList.remove('centerJustyGoods');
+          }
+  
+          // index < 6 ? currentItem.style.justifyContent = 'center' : currentItem.style.justifyContent = 'unset';
+  
+        });
+  
+        const price = item.special_price < item.price && item.special_price != null ? item.special_price : item.price;
+        const oldPrice =  item.old_price ?? 0;
+        const canShowOldPrice = oldPrice > price;
+  
+        
+  
+        template += this.getGoodTemplate(item, price, oldPrice, canShowOldPrice);
+      });
+  
+      template += `
+        </div>
+        <div class="swiper-button-next swiper-button-next-stories-prod"></div>
+        <div class="swiper-button-prev swiper-button-prev-stories-prod"></div>
+      </div>
+      `;
+  
+      return template;
+    }
+  
+    getGoodTemplate(item, price, oldPrice, canShowOldPrice) {
+      return `
+        <div class="swiper-slide">
+          <div class="player-wrapper__chunk-goods-wrp-item">
+            <div class="player-wrapper__chunk-goods-wrp-content">
+                <div class="player-wrapper__chunk-goods-wrp-image">
+                  <a href="#">
+                    <img src="${item.thumbnail ?? 'https://simg2.marwin.kz/media/catalog/product/cache/550cf8d20d514ab5650dc2adb71f19c7/s/c/nioh_collection_ps5.png'}" alt="${item.name}"></img>
+                  </a>
+                </div>
+                <div class="player-wrapper__chunk-goods-wrp-link">
+                  <a href="#">${item.name}</a>
+                </div>
+                <div class="player-wrapper__chunk-goods-wrp-prices">
+                  <div class="player-wrapper__flex">
+                    <div class="player-wrapper__chunk-goods-wrp-price_old-price">
+                      <span>
+                        ${canShowOldPrice ? this.parsePrice(oldPrice) + ' ' + '&#8376;' : ''}
+                      </span>
+                    </div>
+                    <div class="player-wrapper__chunk-goods-wrp-price"><span>${this.parsePrice(price) + ' ' + '&#8376;'}</span></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+    }
+  
+  
+    parsePrice (priceNumber) {
+      Number.prototype.toDivide = function() {
+        const int = String(Math.trunc(this));
+        if(int.length <= 3) return int;
+        let space = 0,
+            number = '';
+    
+        for(let i = int.length - 1; i >= 0; i--) {
+            if(space == 3) {
+                number = ' ' + number;
+                space = 0;
+            }
+            number = int.charAt(i) + number;
+            space++;
+        }
+    
+        return number;
+    }
+    
+      const parseInt = Number(priceNumber);
+      priceNumber = parseInt.toDivide();
+  
+      return priceNumber;
+  }
+  
+    // StoriesProductbasketAdd (item) {
+    //     let template = `
+    //             <div class="product actions product-item-actions">
+    //               <div class="actions-primary">
+    //                   <form data-role="tocart-form" action="https://www.meloman.kz/checkout/cart/add/product/3461530/" method="post">
+    //                       <input type="hidden" name="product" value="${item.entity_id}">
+    //                       <input name="form_key" type="hidden" value="D6kBy8Uj3klNurr9">
+    //                       <button type="submit" disabled="" title="Добавить в корзину" class="action tocart primary" data-id-retail="">
+    //                           <img class="btn-icon item-adding" src="https://www.meloman.kz/static/version1552894204/frontend/Astrio/meloman/ru_RU/images/preloader.svg">
+    //                           <span>Добавить в корзину</span>
+    //                       </button>
+    //                   </form>
+    //               </div>
+    //             <div data-role="add-to-links" class="actions-secondary"></div>
+    //         </div>
+    //           `;
+  
+    //       return template
+  
+    // }
+  
+  // turnOnTurnoffSound() {
+  //     let soundBtn = this.modal.querySelector('.player-wrapper__muted');
+  //     let changeMuted = soundBtn;
+  //     changeMuted.addEventListener('click', () => {
+  //         this.muted = !this.muted;
+  //         changeMuted.querySelector('.player-wrapper__on-muted').classList.toggle('change_on-muted');
+  //         changeMuted.querySelector('.player-wrapper__off-muted').classList.toggle('change_off-muted');
+  //         this.modalSwiper.slides.forEach((slide) => {
+  //           const video = slide.querySelector('video');
+  //           if(video) {
+  //             video.muted = this.muted;
+  //           }
+  //         });
+  //     });
+  //   }
+  
+  
+    // <div class="player-wrapper__chunk-goods-wrp-add-cart" title="Добавить в корзину"></div>
+  
+    // getGoodTemplate(item, specialPrice, price, oldPrice) {
+    //   return `
+    //     <div class="swiper-slide">
+    //       <div class="player-wrapper__chunk-goods-wrp-item">
+    //         <div class="player-wrapper__chunk-goods-wrp-content">
+    //             <div class="player-wrapper__chunk-goods-wrp-image">
+    //               <a href="#">
+    //                 <img src="${item.thumbnail ?? 'https://simg2.marwin.kz/media/catalog/product/cache/550cf8d20d514ab5650dc2adb71f19c7/s/c/nioh_collection_ps5.png'}" alt=""></img>
+    //               </a>
+    //             </div>
+    //             <div class="player-wrapper__chunk-goods-wrp-type">
+    //               <a href="#">${item.name}</a>
+    //             </div>
+    //             <div class="player-wrapper__chunk-goods-wrp-prices">
+    //               <div>
+    //                 <div class="player-wrapper__chunk-goods-wrp-price${item.price > item.special_price ? ' player-wrapper__chunk-goods-wrp-price_underline' : ''}">
+    //                   ${item.price}
+    //                 </div>
+    //               <div class="player-wrapper__chunk-goods-wrp-price_old-price">${item.old_price == undefined ? '' : item.old_price}</div>
+    //               <div class="player-wrapper__chunk-goods-wrp-price_special-price">${item.special_price}</div>
+    //               </div>
+    //               <div class="player-wrapper__chunk-goods-wrp-add-cart" title="Добавить в корзину"></div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   `
+    // }
+  
+  
+  
+    
+    getStoryItemTypeTemplate(item) {
+  
+      const typeFormat = item.url.slice(item.url.lastIndexOf('.') + 1);
+  
+      let template = '<div class="player-wrapper__chunk player-wrapper__chunk-active">';
+      if (item.type == "video") {
+        template += `
+          <video class="player-wrapper__chunk-video" preload="metadata" playsinline ${this.muted ? 'muted': ''}>
+            <source src="${item.url}" type="${item.type}/${typeFormat}">
+          </video>
+        `;
+      }
+      if (item.type == "image") {
+        template += `<img src="${item.url}" alt="${item.type}"></img>`;
+      }
+     
+      template += '</div>';
+  
+      return template;
+    }
+  
+    getModalCloseButton() {
+      const button = document.createElement("div");
+      button.classList.add('close_strories');
+      button.innerHTML = `
+      <div class="close_strories_mark">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.9394 9.00006L0.469727 1.53039L1.53039 0.469727L9.00006 7.9394L16.4697 0.469727L17.5304 1.53039L10.0607 9.00006L17.5304 16.4697L16.4697 17.5304L9.00006 10.0607L1.53039 17.5304L0.469727 16.4697L7.9394 9.00006Z"></path></svg>
+      </div>`;
+      button.addEventListener('click', () => {
+        this.closeModal();
+      });
+  
+      return button;
+    }
+  
+    
+    initEvents() {
+      [...this.modalSwiper.wrapperEl.querySelectorAll('.swiper-slide')].forEach((storyElement, index) => {
+        storyElement.querySelector('.player-wrapper__next').addEventListener('click', this.circleColors);
+        storyElement.querySelector('.player-wrapper__next').addEventListener('click', this.nextStoryItem);
+        storyElement.querySelector('.player-wrapper__prev').addEventListener('click', this.prevStoryItem);
+        storyElement.addEventListener('click', () => this.slideToStoryItem(index));
+        // тут можно вызвать еще одну функцию на удержание пауза
+      });
+  
+      this.modalSwiper.on('slideChange', () => {
+        const activeIndex = this.modalSwiper.activeIndex;
+        const prevIndex = this.modalSwiper.previousIndex;
+        const activeElement = this.modalSwiper.slides[activeIndex];
+        const prevElement = this.modalSwiper.slides[prevIndex];
+  
+        
+  
+        if(activeElement) {
+          const video = activeElement.querySelector('video');
+          const currentItem = this.options.stories[this.modalSwiper.activeIndex].items[this.storiesIndexes[this.modalSwiper.activeIndex]];
+          const opacityTimeLineNone = prevElement.querySelector('.player-wrapper__timeline-wrp').style.opacity = 0;
+          const opacityTimeLineBlock = activeElement.querySelector('.player-wrapper__timeline-wrp').style.opacity = 1;
+  
+          
+  
+  
+          // let showGoodsButtonHide = activeElement.parentNode.parentNode.parentNode.querySelector('.show-goods-button');
+          // showGoodsButtonHide.classList.add('showGoodsButtonHide');
+          // setTimeout(() => {
+          //   showGoodsButtonHide.classList.remove('showGoodsButtonHide')
+          // }, 500);
+  
+  
+          let activeElmAnimation = activeElement.querySelector('.player-wrapper__timeline').children[0];
+              activeElmAnimation.classList.add('animate-time-line');
+              activeElmAnimation.style.animationDuration = video.duration + 's';
+  
+          video.addEventListener('ended', this.nextStoryItem);
+  
+          
+  
+          const nextAnimElemSlide = activeElement.querySelector('.player-wrapper__timeline-wrp').querySelectorAll('.player-wrapper__timeline');
+              nextAnimElemSlide.forEach(elm => {
+  
+            let elmProcess = elm.querySelector('.player-wrapper__process');
+  
+            if(elmProcess.style.animationPlayState == "paused") {
+              elmProcess.style.animationPlayState = "running";
+              elmProcess.classList.add('animate-time-line');
+            }
+          });
+          
+          if(video) {
+            video.play();
+          }
+  
+          let linkAppend = activeElement.querySelector('.player-wrapper__chunk-wrp');
+          const prevElmSliderLinkHiden = prevElement.querySelectorAll('.stories-goods__link'),
+                activeElmSliderLinkHiden = activeElement.querySelectorAll('.stories-goods__link');
+  
+          prevElmSliderLinkHiden.forEach(prevElmLink => {
+            if(prevElmLink) {
+              prevElmLink.classList.add('show-goods-button__hide');
+            }
+          });
+  
+          activeElmSliderLinkHiden.forEach(activeElmLink => {
+            if(activeElmLink) {
+              activeElmLink.classList.remove('show-goods-button__hide');
+            }
+          });
+  
+  
+          if(currentItem.goods.length > 0) {
+            this.showGoods.innerHTML = this.getGoodsTemplate(currentItem);
+            this.goodsButton.classList.remove('show-goods-button__hide');
+          }
+          else {
+            this.showGoods.innerHTML = '';
+            this.goodsButton.classList.add('show-goods-button__hide');
+            linkAppend.append(this.showGoodsButtonLink(currentItem.prod))
+            
+          }
+        }
+  
+        if(prevElement) {
+          const video = prevElement.querySelector('video');
+  
+          const prevAnimElemSlide = prevElement.querySelector('.player-wrapper__timeline-wrp').querySelectorAll('.player-wrapper__timeline');
+                prevAnimElemSlide.forEach(elm => {
+  
+            let elmProcess = elm.querySelector('.player-wrapper__process');
+            
+            if(elmProcess.style.animationPlayState == "running" && elmProcess.classList.contains('animate-time-line')) {
+              elmProcess.style.animationPlayState = "paused";
+              elmProcess.classList.remove('animate-time-line');
+            }
+            
+          });
+          
+          if(video) {
+            video.pause();
+            video.currentTime = 0;
+          }
+        }
+      });
+    }
+  
+  
+    playVideo() {
+      const activeIndex = this.modalSwiper.activeIndex;
+      const slides = this.modalSwiper.slides.length > 0 ? this.modalSwiper.slides : [...this.modalSwiper.wrapperEl.querySelectorAll('.swiper-slide')];
+      const activeElement = slides[activeIndex];
+  
+  
+  
+      if(activeElement) {
+        const video = activeElement.querySelector('video');
+        const timeLineAll = [...activeElement.querySelectorAll('.player-wrapper__timeline')];
+        const currentItemIndex = this.storiesIndexes[this.modalSwiper.activeIndex];
+  
+        
+        if(video) {
+          video.play();
+        }
+  
+        const activeAnimationElm = activeElement.children[0].querySelector('.player-wrapper__timeline-wrp').querySelectorAll('.player-wrapper__timeline');
+        activeAnimationElm.forEach(elm => {
+          elm.querySelector('.player-wrapper__process').style.animationPlayState = "running";
+        });
+  
+  
+           video.addEventListener('loadedmetadata', (e) => {
+            let resDuration = e.target.duration;
+            let resultDuration = resDuration + 's';
+              nextAnimationLine(resultDuration);
+            });
+  
+              function nextAnimationLine(duration) {
+                timeLineAll.forEach((timeLine, index) => {
+                if(index <= currentItemIndex) {
+                  timeLine.children[0].classList.add('animate-time-line');
+                  timeLine.children[0].style.animationDuration = duration;
+                  if(index >= 1) {
+                    timeLine.previousElementSibling.classList.add('act-block');
+                    timeLine.previousElementSibling.children[0].classList.remove('animate-time-line');
+                  }
+                }
+                  else if(index > currentItemIndex) {
+                      timeLine.children[0].classList.remove('animate-time-line');
+                      timeLine.classList.remove('act-block');
+                      timeLine.previousElementSibling.classList.remove('act-block');
+                      timeLine.children[0].style.animationDuration = duration;
+                  }
+              });
+          }
+          
+          
+  
+          video.addEventListener('ended', this.nextStoryItem);
+      
+      }
+    }
+  
+    pauseVideo(returnToStart = true) {
+      const activeIndex = this.modalSwiper.activeIndex;
+      const slides = this.modalSwiper.slides.length > 0 ? this.modalSwiper.slides : [...this.modalSwiper.wrapperEl.querySelectorAll('.swiper-slide')];
+      const activeElement = slides[activeIndex];
+      
+      const activeAnimationElm = activeElement.children[0].querySelector('.player-wrapper__timeline-wrp').querySelectorAll('.player-wrapper__timeline');
+  
+      activeAnimationElm.forEach(elm => {
+        elm.querySelector('.player-wrapper__process').style.animationPlayState = "paused";
+      });
+      
+      if(activeElement) {
+        const video = activeElement.querySelector('video');
+        if(video) {
+          video.pause();
+          if(returnToStart) {
+            video.currentTime = 0;
+          }
+        }
+      }
+    }
+  
+  
+    stopClickVideo = (e) => {
+      if(!e.target.closest('.swiper-slide').classList.contains('swiper-slide-active')) return false;
+  
+      const playerWrapper = e.target.closest('.player-wrapper');
+      const playerChunk = playerWrapper.querySelector('.player-wrapper__chunk-wrp');
+  
+      const video = playerChunk.querySelector('video');
+  
+      if(video) {
+        video.pause();
+      }
+    }
+  
+    playClickVideo = (e) => {
+      if(!e.target.closest('.swiper-slide').classList.contains('swiper-slide-active')) return false;
+  
+      const playerWrapper = e.target.closest('.player-wrapper');
+      const playerChunk = playerWrapper.querySelector('.player-wrapper__chunk-wrp');
+  
+      const video = playerChunk.querySelector('video');
+  
+      if(video) {
+        video.play();
+      }
+    }
+  
+    //assign color if viewed 
+    circleColors = (e) => {
+      if(this.storiesIndexes[this.modalSwiper.activeIndex] === this.options.stories[this.modalSwiper.activeIndex].items.length - 1) {
+        let currentIndex = this.modal.parentNode.querySelector('.stories-cirle-wrapper').children[this.modalSwiper.activeIndex];
+        this.arrayIndexs.push(currentIndex);
+        this.loadPageCircle(this.arrayIndexs);
+      }
+    }
+  
+    loadPageCircle(element) {
+      let arrayElm = [];
+      if(!element == '') {
+        element.forEach((elm,i) => {
+          elm.children[0].style.borderColor = 'blue';
+          let allCircle = document.querySelectorAll('.stories-cirle-wrapper__circle');
+          allCircle.forEach((item,index) => {
+            if(item.children[0] == elm.children[0] && item.classList.contains('megaId') != elm.id) {
+              arrayElm.push(elm);
+            }
+          });
+          console.log(i);
+            localStorage.setItem(`stories_key_custom_${this.unique_id[i]}`, arrayElm[i].id);
+            this.localSave(i);
+        });
+      }
+    }
+  
+  
+     localSave (i) {
+      for (let k = 0; k < window.localStorage.length; k++) {
+        let key = window.localStorage.key(k);
+          const value = localStorage[key];
+          if(value.includes('megaId_')) {
+            document.querySelectorAll('#' + value)[0].children[0].style.borderColor = this.colorCircleActive;
+            document.querySelectorAll('#' + value)[0].style.order = '1';
+            // document.querySelectorAll('#' + value)[0].style.animationPlayState = 'paused';
+          }
+      }
+    }
+  
+  
+    loadingCrearElementLocalStorage (index) {
+      // console.log(index);
+  
+      this.unique_id = JSON.parse(localStorage.getItem("unique_id_"));
+      
+      setTimeout(() => {
+          let searchElm = document.querySelectorAll('.stories-cirle .stories-cirle-wrapper__circle');
+          console.log(searchElm[index].classList.add('stories_key_custom_' + this.unique_id[index]));
+          console.log(searchElm[index]);
+          localStorage.removeItem('stories_key_custom_' + this.unique_id[index])
+        // if(searchElm[index].style.order == 'unset') {
+        //   console.log('unset');
+          searchElm[index].style.order = 'unset';
+          searchElm[index].children[0].style.borderColor = 'red';
+        //   console.log(true);
+        // }
+      }, null);
+  
+  
+        
+      // this.unique_id.forEach((elm,index) => {
+      //   if(elm != this.initialId[index]) {
+      //     console.log('dddddddddddddddddddddd');
+      //     let searchElm = document.querySelectorAll('.stories-cirle .stories-cirle-wrapper__circle');
+      //     //вЫТАСКИВАЕМ ID КОТОРЫЙ НЕ СОВПАЛ!!!
+      //     // setTimeout(() => {
+      //     //   if(searchElm[index].style.order == '1') {
+      //     //     searchElm[index].style.order = 'unset';
+      //     //     searchElm[index].children[0].style.borderColor = 'red';
+      //     //   }
+      //     // }, null);
+      //   }
+      // });
+    }
+    
+    
+    // saveLocalCircleAutoPlay = () => {
+    //   if(this.storiesIndexes[this.modalSwiper.activeIndex] === this.options.stories[this.modalSwiper.activeIndex].items.length - 1) {
+    //     let currentIndex = this.modal.parentNode.querySelector('.stories-cirle-wrapper').children[this.modalSwiper.activeIndex];
+    //     this.arrayIndexs.push(currentIndex);
+        
+    //     let arrayElm = [];
+    //     if(!this.arrayIndexs == '') {
+    //       this.arrayIndexs.forEach((elm,i) => {
+    //         elm.children[0].style.borderColor = 'blue';
+    //         let allCircle = document.querySelectorAll('.stories-cirle-wrapper__circle');
+    //         allCircle.forEach(item => {
+    //           if(item.children[0] == elm.children[0] && item.classList.contains('megaId') != elm.id) {
+    //             arrayElm.push(elm);
+    //           }
+    //         });
+    //           localStorage.setItem(`stories_key_custom_${Date.now()}`, arrayElm[i].id);
+    //           for (let k = 0; k < window.localStorage.length; k++) {
+    //             let key = window.localStorage.key(k);
+    //               const value = localStorage[key];
+    //               if(value.includes('megaId_')) {
+    //                 document.querySelectorAll('#' + value)[0].children[0].style.borderColor = this.colorCircleActive;
+    //                 document.querySelectorAll('#' + value)[0].style.order = '1';
+    //               }
+    //           }
+    //       });
+    //     }
+  
+    //   }
+    // }
+  
+  
+    // здесь переключается сторис вперед
+    nextStoryItem = (e) => {
+  
+      if(!e.target.closest('.swiper-slide').classList.contains('swiper-slide-active')) return false;
+      
+      const playerWrapper = e.target.closest('.player-wrapper');
+      const playerChunk = playerWrapper.querySelector('.player-wrapper__chunk-wrp');
+      
+      if(this.storiesIndexes[this.modalSwiper.activeIndex] < this.options.stories[this.modalSwiper.activeIndex].items.length - 1) {
+        this.storiesIndexes[this.modalSwiper.activeIndex] += 1;
+        const currentItem = this.options.stories[this.modalSwiper.activeIndex].items[this.storiesIndexes[this.modalSwiper.activeIndex]];
+  
+        playerChunk.innerHTML = this.getStoryItemTypeTemplate(currentItem);
+        
+        const video = playerChunk.querySelector('video');
+  
+        this.playVideo();
+  
+        
+  
+        let linkAppend = playerWrapper.parentElement.querySelector('.player-wrapper__chunk-wrp');
+        
+        if(currentItem.goods.length > 0) {
+          this.showGoods.innerHTML = this.getGoodsTemplate(currentItem);
+          this.goodsButton.classList.remove('show-goods-button__hide');
+        }
+        else {
+          this.showGoods.innerHTML = '';
+          this.goodsButton.classList.add('show-goods-button__hide');
+          linkAppend.append(this.showGoodsButtonLink(currentItem.prod))
+        }
+      }
+      else if(this.storiesIndexes[this.modalSwiper.activeIndex] >= this.options.stories[this.modalSwiper.activeIndex].items.length - 1) {
+        const video = playerChunk.querySelector('video');
+        
+        if(video) {
+          video.pause();
+        }
+  
+        if(this.modalSwiper.activeIndex == this.options.stories.length - 1) {
+  
+          // this.saveLocalCircleAutoPlay();
+          this.closeModal();
+        }
+        else {
+  
+          // this.saveLocalCircleAutoPlay();
+          this.modalSwiper.slideNext();
+          
+        }
+      }
+  
+      e.stopPropagation();
+    }
+  
+    // здесь переключается сторис назад
+    prevStoryItem = (e) => {
+      if(!e.target.closest('.swiper-slide').classList.contains('swiper-slide-active')) return false;
+  
+      const playerChunk = e.target.closest('.player-wrapper').querySelector('.player-wrapper__chunk-wrp');
+  
+      if(this.storiesIndexes[this.modalSwiper.activeIndex] !== 0) {
+        this.storiesIndexes[this.modalSwiper.activeIndex] -= 1;
+        const currentItem = this.options.stories[this.modalSwiper.activeIndex].items[this.storiesIndexes[this.modalSwiper.activeIndex]];
+  
+        playerChunk.innerHTML = this.getStoryItemTypeTemplate(currentItem);
+  
+  
+        this.playVideo();
+  
+        let linkAppend = playerChunk.parentElement.querySelector('.player-wrapper__chunk-wrp');
+        
+        if(currentItem.goods.length > 0) {
+          this.showGoods.innerHTML = this.getGoodsTemplate(currentItem);
+          this.goodsButton.classList.remove('show-goods-button__hide');
+        }
+        else {
+          this.showGoods.innerHTML = '';
+          this.goodsButton.classList.add('show-goods-button__hide');
+          linkAppend.append(this.showGoodsButtonLink(currentItem.prod))
+        }
+      }
+      else if(this.modalSwiper.activeIndex !== 0) {
+        const video = playerChunk.querySelector('video');
+  
+        if(video) {
+          video.pause();
+        }
+  
+        this.modalSwiper.slidePrev();
+      }
+  
+      e.stopPropagation();
+    }
+  
+    turnOnTurnoffSound() {
+      let soundBtn = this.modal.querySelector('.player-wrapper__muted');
+      let changeMuted = soundBtn;
+      changeMuted.addEventListener('click', () => {
+          this.muted = !this.muted;
+          changeMuted.querySelector('.player-wrapper__on-muted').classList.toggle('change_on-muted');
+          changeMuted.querySelector('.player-wrapper__off-muted').classList.toggle('change_off-muted');
+          this.modalSwiper.slides.forEach((slide) => {
+            const video = slide.querySelector('video');
+            if(video) {
+              video.muted = this.muted;
+            }
+          });
+      });
+    }
+  
+    slideToStoryItem(index) {
+      if(this.modalSwiper.activeIndex == index) return false;
+      this.modalSwiper.slideTo(index);
+    }
+  
+    init() {
+      // this.getStoryGoodsLinkTemplate();
+      this.makeStoriesCircles();
+      this.preloader();
+      this.makeStoriesModal(this.makeStoriesTemplate());
+      this.turnOnTurnoffSound();
+      // this.loadPageCircle();
+      // this.localSave();
+    }
+  }
+  
+  window.StoriesSlider = StoriesSlider;
+  
+  
+  
+  
+  
+      </script>
+  
            
   <div style="position:absolute;left:-3072px;top:0"><div class="width=100% height=100% align-left"></div><div class="align-left" width="1"></div><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#108;&#105;&#110;&#105;&#121;&#97;&#111;&#107;&#111;&#110;&#46;&#114;&#117;">&#1086;&#1082;&#1085;&#1072;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#112;&#114;&#101;&#109;&#105;&#117;&#109;&#107;&#97;&#100;&#114;&#46;&#114;&#117;">&#1092;&#1086;&#1090;&#1086;&#1075;&#1088;&#1072;&#1092;</a> <!-- div --><!-- div end --> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#117;&#110;&#105;&#115;&#104;&#97;&#98;&#108;&#111;&#110;.&#99;&#111;&#109;">html php</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#114;&#105;&#116;&#117;&#97;&#108;&#103;&#97;&#114;&#97;&#110;&#116;&#46;&#114;&#117;">&#1087;&#1072;&#1084;&#1103;&#1090;&#1085;&#1080;&#1082;&#1080;</a> <a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;&#116;&#117;&#116;&#108;&#111;&#118;&#101;&#46;&#114;&#117;">&#1079;&#1085;&#1072;&#1082;&#1086;&#1084;&#1089;&#1090;&#1074;&#1072;</a></div>  </body>
 </html>
