@@ -2669,14 +2669,15 @@ justify-content: center !important;
   
     
     getStoryItemTypeTemplate(item) {
-  
-      const typeFormat = item.url.slice(item.url.lastIndexOf('.') + 1);
+      console.log(item);
+      const typeFormat = item.url.slice(item.url.lastIndexOf('.') + 1) ;
+      // console.log(typeFormat);
   
       let template = '<div class="player-wrapper__chunk player-wrapper__chunk-active">';
       if (item.type == "video") {
         template += `
           <video class="player-wrapper__chunk-video" preload="metadata" playsinline ${this.muted ? 'muted': ''}>
-            <source src="${item.url}" type="${item.type}/${typeFormat}">
+            <source src="${item.url}">
           </video>
         `;
       }
