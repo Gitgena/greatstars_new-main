@@ -1199,7 +1199,11 @@ justify-content: center !important;
                     </div>
                 </div>
             </div>
-            <div id="app-stories"></div>
+            <div id="app-stories" style="display: none;"></div>
+
+            <div class="vremenoe-video">
+              <iframe width="100%" height="360" src="https://www.youtube-nocookie.com/embed/e_qb6QdqoOU?si=JLYwPFTDMA3F-V0V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
             
 
             <!-- Top Menu -->
@@ -2678,13 +2682,8 @@ justify-content: center !important;
       let template = '<div class="player-wrapper__chunk player-wrapper__chunk-active">';
       if (item.type == "video") {
         template += `
-          <video class="player-wrapper__chunk-video" preload="metadata" playsinline ${this.muted ? 'muted': ''}>
-            <source src="${item.url}">
-          </video>
+        <video class="player-wrapper__chunk-video" preload="metadata" playsinline ${this.muted ? 'muted' : ''} src="${item.url}"></video>
         `;
-      }
-      if (item.type == "image") {
-        template += `<img src="${item.url}" alt="${item.type}"></img>`;
       }
      
       template += '</div>';
